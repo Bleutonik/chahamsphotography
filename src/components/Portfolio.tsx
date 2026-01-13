@@ -31,7 +31,7 @@ const portfolioItems = [
   },
   {
     id: 5,
-    title: 'Quinceañeras',
+    title: 'Bodas',
     category: 'Fotografía & Video',
     image: portfolioQuince,
   },
