@@ -9,7 +9,7 @@ const services = [
   {
     icon: Camera,
     title: 'Retratos',
-    description: 'Sesiones personalizadas para Modelos, Maternidad, Portrait profesional y más que reflejan tu esencia y personalidad única.',
+    description: 'Capturamos tu verdadera esencia a través de una lente experta. Diseñamos sesiones personalizadas que resaltan tu personalidad única en cada etapa:\n\nModelos | Maternidad | Portrait Profesional | Y más',
   },
   {
     icon: Video,
