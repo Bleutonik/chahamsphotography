@@ -19,7 +19,7 @@ const Header = () => {
     { href: '#portafolio', label: 'Portafolio' },
     { href: '#servicios', label: 'Servicios' },
     { href: '#promociones', label: 'Promociones' },
-    { href: '#contacto', label: 'Contacto' },
+    { href: 'https://wa.me/17875551234', label: 'Contacto', external: true },
   ];
 
   return (
@@ -38,6 +38,8 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
               className="font-body text-sm tracking-wide text-foreground hover-underline transition-colors duration-300 hover:text-primary"
             >
               {link.label}
@@ -66,6 +68,8 @@ const Header = () => {
             <a
               key={link.href}
               href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
               onClick={() => setIsMobileMenuOpen(false)}
               className="font-body text-lg text-foreground hover:text-primary transition-colors duration-300 py-2"
             >
