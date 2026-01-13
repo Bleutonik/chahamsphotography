@@ -3,50 +3,35 @@ import portfolioWedding from '@/assets/portfolio-wedding.jpg';
 import portfolioFamily from '@/assets/portfolio-family.jpg';
 import portfolioVideo from '@/assets/portfolio-video.jpg';
 import portfolioQuince from '@/assets/portfolio-quince.jpg';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
-
-const portfolioItems = [
-  {
-    id: 1,
-    title: 'Retratos',
-    category: 'Fotografía',
-    image: portfolioPortrait,
-  },
-  {
-    id: 2,
-    title: 'Bodas',
-    category: 'Fotografía & Video',
-    image: portfolioWedding,
-  },
-  {
-    id: 3,
-    title: 'Familias',
-    category: 'Fotografía',
-    image: portfolioFamily,
-  },
-  {
-    id: 4,
-    title: 'Videografía',
-    category: 'Video',
-    image: portfolioVideo,
-  },
-  {
-    id: 5,
-    title: 'Bodas',
-    category: 'Fotografía & Video',
-    image: portfolioQuince,
-  },
-];
-
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+const portfolioItems = [{
+  id: 1,
+  title: 'Retratos',
+  category: 'Fotografía',
+  image: portfolioPortrait
+}, {
+  id: 2,
+  title: 'Bodas',
+  category: 'Fotografía & Video',
+  image: portfolioWedding
+}, {
+  id: 3,
+  title: 'Familias',
+  category: 'Fotografía',
+  image: portfolioFamily
+}, {
+  id: 4,
+  title: 'Videografía',
+  category: 'Video',
+  image: portfolioVideo
+}, {
+  id: 5,
+  title: 'Bodas',
+  category: 'Fotografía & Video',
+  image: portfolioQuince
+}];
 const Portfolio = () => {
-  return (
-    <section id="portafolio" className="py-20 md:py-32 bg-cream-dark">
+  return <section id="portafolio" className="py-20 md:py-32 bg-cream-dark">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -63,34 +48,23 @@ const Portfolio = () => {
         </div>
 
         {/* Portfolio Carousel */}
-        <Carousel
-          opts={{
-            align: 'center',
-            loop: true,
-          }}
-          className="w-full max-w-5xl mx-auto"
-        >
+        <Carousel opts={{
+        align: 'center',
+        loop: true
+      }} className="w-full max-w-5xl mx-auto">
           <CarouselContent>
-            {portfolioItems.map((item) => (
-              <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/2">
+            {portfolioItems.map(item => <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/2">
                 <div className="relative rounded-lg overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-500 mx-2">
                   <div className="relative aspect-[4/3]">
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                    />
+                    <img src={item.image} alt={item.title} className="w-full h-full transition-transform duration-500 hover:scale-105 object-contain" />
                   </div>
                 </div>
-              </CarouselItem>
-            ))}
+              </CarouselItem>)}
           </CarouselContent>
           <CarouselPrevious className="left-0 md:-left-12 bg-cream/90 hover:bg-cream border-gold text-coffee" />
           <CarouselNext className="right-0 md:-right-12 bg-cream/90 hover:bg-cream border-gold text-coffee" />
         </Carousel>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Portfolio;
