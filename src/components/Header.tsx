@@ -30,14 +30,7 @@ const Header = () => {
           : 'bg-transparent py-4'
       }`}
     >
-      <div className="container mx-auto px-4 flex items-center justify-between">
-        <a href="#inicio" className="flex items-center">
-          <img
-            src={logo}
-            alt="Chaham's Photography & Video"
-            className="h-12 md:h-16 w-auto transition-all duration-300"
-          />
-        </a>
+      <div className="container mx-auto px-4 flex items-center justify-end">
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
