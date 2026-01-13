@@ -45,7 +45,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-foreground mb-1">Teléfono</h4>
-                  <a className="font-body text-muted-foreground hover:text-primary transition-colors" href="tel:+1 (787)-363-0620">
+                  <a className="font-body text-muted-foreground hover:text-primary transition-colors" href="https://wa.me/17873630620" target="_blank" rel="noopener noreferrer">
                     +1 (787)-363-0620
                   </a>
                 </div>
