@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { ChevronDown } from 'lucide-react';
 import heroImage from '@/assets/hero-wedding.jpg';
+import cameraLogo from '@/assets/camera-logo.png';
 
 const Hero = () => {
   return (
@@ -21,6 +22,11 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="animate-fade-in">
+          <img 
+            src={cameraLogo} 
+            alt="Chaham's Photography Logo" 
+            className="w-24 md:w-32 h-auto mx-auto mb-4"
+          />
           <p className="font-body text-gold-light text-lg md:text-xl mb-4 tracking-widest uppercase">
             Fotografía & Video Profesional
           </p>
