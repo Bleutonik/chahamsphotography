@@ -41,7 +41,7 @@ const Hero = () => {
               <a href="#portafolio">Ver Portafolio</a>
             </Button>
             <Button variant="elegant" size="xl" className="border-cream text-cream hover:bg-cream hover:text-coffee" asChild>
-              <a href="#contacto">Contactar</a>
+              <a href="https://wa.me/17873630620" target="_blank" rel="noopener noreferrer">Contactar</a>
             </Button>
           </div>
         </div>
