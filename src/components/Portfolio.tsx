@@ -3,7 +3,13 @@ import portfolioWedding from '@/assets/portfolio-wedding.jpg';
 import portfolioFamily from '@/assets/portfolio-family.jpg';
 import portfolioVideo from '@/assets/portfolio-video.jpg';
 import portfolioQuince from '@/assets/portfolio-quince.jpg';
+import portfolioCouple1 from '@/assets/portfolio-couple-1.jpg';
+import portfolioSunset from '@/assets/portfolio-sunset.jpg';
+import portfolioCoupleHorse from '@/assets/portfolio-couple-horse.jpg';
+import portfolioBabyshower from '@/assets/portfolio-babyshower.jpg';
+import portfolioCouple2 from '@/assets/portfolio-couple-2.jpg';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+
 const portfolioItems = [{
   id: 1,
   title: 'Retratos',
@@ -26,9 +32,34 @@ const portfolioItems = [{
   image: portfolioVideo
 }, {
   id: 5,
-  title: 'Bodas',
+  title: 'Quinceañera',
   category: 'Fotografía & Video',
   image: portfolioQuince
+}, {
+  id: 6,
+  title: 'Parejas',
+  category: 'Fotografía',
+  image: portfolioCouple1
+}, {
+  id: 7,
+  title: 'Atardecer',
+  category: 'Fotografía',
+  image: portfolioSunset
+}, {
+  id: 8,
+  title: 'Sesión Especial',
+  category: 'Fotografía',
+  image: portfolioCoupleHorse
+}, {
+  id: 9,
+  title: 'Baby Shower',
+  category: 'Eventos',
+  image: portfolioBabyshower
+}, {
+  id: 10,
+  title: 'Bodas',
+  category: 'Fotografía',
+  image: portfolioCouple2
 }];
 const Portfolio = () => {
   return <section id="portafolio" className="py-20 md:py-32 bg-cream-dark">
