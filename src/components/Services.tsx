@@ -1,4 +1,6 @@
 import { Camera, Video, Heart, Users, Sparkles, Clock } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+
 const services = [{
   icon: Heart,
   title: 'Bodas',
@@ -6,7 +8,8 @@ const services = [{
 }, {
   icon: Camera,
   title: 'Retratos',
-  description: 'Capturamos tu verdadera esencia a través de una lente experta. Diseñamos sesiones personalizadas que resaltan tu personalidad única en cada etapa:\n\nModelos | Maternidad | Portrait Profesional | Y más'
+  description: 'Capturamos tu verdadera esencia a través de una lente experta. Diseñamos sesiones personalizadas que resaltan tu personalidad única en cada etapa:',
+  categories: ['Modelos', 'Maternidad', 'Portrait Profesional', 'Y más']
 }, {
   icon: Video,
   title: 'Videografía',
@@ -52,9 +55,22 @@ const Services = () => {
               <h3 className="font-display text-2xl font-semibold text-foreground mb-3">
                 {service.title}
               </h3>
-              <p className="font-body text-muted-foreground leading-relaxed text-sm whitespace-pre-line">
+              <p className="font-body text-muted-foreground leading-relaxed text-sm">
                 {service.description}
               </p>
+              {service.categories && (
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {service.categories.map((category) => (
+                    <Badge 
+                      key={category} 
+                      variant="secondary" 
+                      className="bg-primary/10 text-primary hover:bg-primary/20 border-none font-medium text-xs px-3 py-1"
+                    >
+                      {category}
+                    </Badge>
+                  ))}
+                </div>
+              )}
             </div>)}
         </div>
       </div>
