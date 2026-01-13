@@ -1,5 +1,5 @@
 import { X, ChevronLeft, ChevronRight } from 'lucide-react';
-import { useEffect, useCallback } from 'react';
+import { useEffect, useCallback, useState, useRef } from 'react';
 
 interface LightboxProps {
   images: { id: number; title: string; category: string; image: string }[];
@@ -11,6 +11,12 @@ interface LightboxProps {
 }
 
 const Lightbox = ({ images, currentIndex, isOpen, onClose, onNext, onPrev }: LightboxProps) => {
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const minSwipeDistance = 50;
+
   const handleKeyDown = useCallback((e: KeyboardEvent) => {
     if (!isOpen) return;
     
@@ -43,14 +49,41 @@ const Lightbox = ({ images, currentIndex, isOpen, onClose, onNext, onPrev }: Lig
     };
   }, [isOpen]);
 
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      onNext();
+    } else if (isRightSwipe) {
+      onPrev();
+    }
+  };
+
   if (!isOpen) return null;
 
   const currentImage = images[currentIndex];
 
   return (
     <div 
+      ref={containerRef}
       className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center animate-fade-in"
       onClick={onClose}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
     >
       {/* Close Button */}
       <button
@@ -61,25 +94,25 @@ const Lightbox = ({ images, currentIndex, isOpen, onClose, onNext, onPrev }: Lig
         <X className="w-6 h-6" />
       </button>
 
-      {/* Previous Button */}
+      {/* Previous Button - hidden on mobile */}
       <button
         onClick={(e) => {
           e.stopPropagation();
           onPrev();
         }}
-        className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 z-10"
+        className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 z-10 hidden md:flex"
         aria-label="Anterior"
       >
         <ChevronLeft className="w-8 h-8" />
       </button>
 
-      {/* Next Button */}
+      {/* Next Button - hidden on mobile */}
       <button
         onClick={(e) => {
           e.stopPropagation();
           onNext();
         }}
-        className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 z-10"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white p-3 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300 z-10 hidden md:flex"
         aria-label="Siguiente"
       >
         <ChevronRight className="w-8 h-8" />
@@ -87,19 +120,15 @@ const Lightbox = ({ images, currentIndex, isOpen, onClose, onNext, onPrev }: Lig
 
       {/* Image Container */}
       <div 
-        className="max-w-[90vw] max-h-[85vh] flex flex-col items-center"
+        className="max-w-[90vw] max-h-[90vh] flex flex-col items-center"
         onClick={(e) => e.stopPropagation()}
       >
         <img
           src={currentImage.image}
           alt={currentImage.title}
-          className="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl animate-scale-in"
+          className="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl animate-scale-in"
         />
-        <div className="mt-4 text-center">
-          <h3 className="text-white text-xl font-display font-semibold">{currentImage.title}</h3>
-          <p className="text-white/60 text-sm">{currentImage.category}</p>
-        </div>
-        <div className="mt-2 text-white/40 text-sm">
+        <div className="mt-3 text-white/40 text-sm">
           {currentIndex + 1} / {images.length}
         </div>
       </div>
