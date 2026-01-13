@@ -73,25 +73,13 @@ const Portfolio = () => {
           <CarouselContent>
             {portfolioItems.map((item) => (
               <CarouselItem key={item.id} className="md:basis-1/2 lg:basis-1/2">
-                <div className="group relative rounded-lg overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-500 mx-2">
+                <div className="relative rounded-lg overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-500 mx-2">
                   <div className="relative aspect-[4/3]">
                     <img
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                     />
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-coffee/80 via-coffee/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                    
-                    {/* Content */}
-                    <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500">
-                      <p className="font-body text-gold-light text-sm tracking-wider uppercase mb-1">
-                        {item.category}
-                      </p>
-                      <h3 className="font-display text-2xl font-bold text-cream">
-                        {item.title}
-                      </h3>
-                    </div>
                   </div>
                 </div>
               </CarouselItem>
