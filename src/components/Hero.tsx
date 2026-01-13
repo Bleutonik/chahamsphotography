@@ -25,7 +25,7 @@ const Hero = () => {
           <img 
             src={cameraLogo} 
             alt="Chaham's Photography Logo" 
-            className="w-40 md:w-56 lg:w-64 h-auto mx-auto mb-2"
+            className="w-80 md:w-[28rem] lg:w-[32rem] h-auto mx-auto mb-0"
           />
           <p className="font-body text-gold-light text-lg md:text-xl mb-4 tracking-widest uppercase">
             Fotografía & Video Profesional
