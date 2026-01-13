@@ -27,7 +27,7 @@ const Hero = () => {
             alt="Chaham's Photography Logo" 
             className="w-40 md:w-56 lg:w-64 h-auto mx-auto mb-0"
           />
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-cream mb-6 leading-tight">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-cream mb-6 leading-tight -mt-2">
             Chaham's
             <span className="block text-3xl md:text-4xl lg:text-5xl font-normal mt-2 text-gold-light">
               Photography & Video
