@@ -1,5 +1,5 @@
 import logo from '@/assets/logo.png';
-import { Instagram, Facebook, Mail } from 'lucide-react';
+import { Instagram, Facebook, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -23,7 +23,7 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex gap-4 mb-8">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/chahamphotography"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-coffee transition-all duration-300"
@@ -32,7 +32,7 @@ const Footer = () => {
               <Instagram className="w-5 h-5" />
             </a>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/ChahamPhotography/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-coffee transition-all duration-300"
@@ -41,11 +41,13 @@ const Footer = () => {
               <Facebook className="w-5 h-5" />
             </a>
             <a
-              href="mailto:info@chahamsphotography.com"
+              href="https://wa.me/17873630620"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-gold/20 flex items-center justify-center text-gold hover:bg-gold hover:text-coffee transition-all duration-300"
-              aria-label="Email"
+              aria-label="WhatsApp"
             >
-              <Mail className="w-5 h-5" />
+              <MessageCircle className="w-5 h-5" />
             </a>
           </div>
 
