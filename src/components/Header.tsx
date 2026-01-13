@@ -19,7 +19,7 @@ const Header = () => {
     { href: '#portafolio', label: 'Portafolio' },
     { href: '#servicios', label: 'Servicios' },
     { href: '#promociones', label: 'Promociones' },
-    { href: 'https://wa.me/17875551234', label: 'Contacto', external: true },
+    { href: 'https://wa.me/17873630620', label: 'Contacto', external: true },
   ];
 
   return (
