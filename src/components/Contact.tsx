@@ -1,10 +1,8 @@
 import { Button } from '@/components/ui/button';
 import { MapPin, Mail, Phone, Instagram, Facebook } from 'lucide-react';
 import logo from '@/assets/logo.png';
-
 const Contact = () => {
-  return (
-    <section id="contacto" className="py-20 md:py-32 bg-cream-dark">
+  return <section id="contacto" className="py-20 md:py-32 bg-cream-dark">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
           {/* Left Column - Info */}
@@ -49,8 +47,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-display font-semibold text-foreground mb-1">Teléfono</h4>
-                  <a href="tel:+17875551234" className="font-body text-muted-foreground hover:text-primary transition-colors">
-                    +1 (787) 555-1234
+                  <a className="font-body text-muted-foreground hover:text-primary transition-colors" href="tel:+1 (787)-363-0620">
+                    +1 (787)-363-0620
                   </a>
                 </div>
               </div>
@@ -60,22 +58,10 @@ const Contact = () => {
             <div>
               <h4 className="font-display font-semibold text-foreground mb-4">Síguenos</h4>
               <div className="flex gap-4">
-                <a
-                  href="https://instagram.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                  aria-label="Instagram"
-                >
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300" aria-label="Instagram">
                   <Instagram className="w-5 h-5" />
                 </a>
-                <a
-                  href="https://facebook.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300"
-                  aria-label="Facebook"
-                >
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-secondary-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300" aria-label="Facebook">
                   <Facebook className="w-5 h-5" />
                 </a>
               </div>
@@ -93,23 +79,13 @@ const Contact = () => {
                   <label htmlFor="name" className="block font-body text-sm text-foreground mb-2">
                     Nombre
                   </label>
-                  <input
-                    type="text"
-                    id="name"
-                    className="w-full px-4 py-3 rounded-md border border-border bg-background text-foreground font-body focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                    placeholder="Tu nombre"
-                  />
+                  <input type="text" id="name" className="w-full px-4 py-3 rounded-md border border-border bg-background text-foreground font-body focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all" placeholder="Tu nombre" />
                 </div>
                 <div>
                   <label htmlFor="email" className="block font-body text-sm text-foreground mb-2">
                     Email
                   </label>
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-3 rounded-md border border-border bg-background text-foreground font-body focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                    placeholder="tu@email.com"
-                  />
+                  <input type="email" id="email" className="w-full px-4 py-3 rounded-md border border-border bg-background text-foreground font-body focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all" placeholder="tu@email.com" />
                 </div>
               </div>
 
@@ -117,10 +93,7 @@ const Contact = () => {
                 <label htmlFor="service" className="block font-body text-sm text-foreground mb-2">
                   Servicio de Interés
                 </label>
-                <select
-                  id="service"
-                  className="w-full px-4 py-3 rounded-md border border-border bg-background text-foreground font-body focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                >
+                <select id="service" className="w-full px-4 py-3 rounded-md border border-border bg-background text-foreground font-body focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all">
                   <option value="">Selecciona un servicio</option>
                   <option value="wedding">Fotografía de Bodas</option>
                   <option value="quince">Quinceañeras</option>
@@ -135,12 +108,7 @@ const Contact = () => {
                 <label htmlFor="message" className="block font-body text-sm text-foreground mb-2">
                   Mensaje
                 </label>
-                <textarea
-                  id="message"
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-md border border-border bg-background text-foreground font-body focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
-                  placeholder="Cuéntanos sobre tu evento o sesión..."
-                />
+                <textarea id="message" rows={4} className="w-full px-4 py-3 rounded-md border border-border bg-background text-foreground font-body focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none" placeholder="Cuéntanos sobre tu evento o sesión..." />
               </div>
 
               <Button variant="hero" size="xl" className="w-full">
@@ -150,8 +118,6 @@ const Contact = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
