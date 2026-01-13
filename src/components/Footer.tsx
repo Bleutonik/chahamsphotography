@@ -1,24 +1,19 @@
-import logo from '@/assets/logo.png';
+import cameraLogo from '@/assets/camera-logo.png';
 import { Instagram, Facebook, MessageCircle } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-secondary text-secondary-foreground py-16">
+    <footer className="bg-secondary text-secondary-foreground py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center">
           {/* Logo */}
           <img
-            src={logo}
+            src={cameraLogo}
             alt="Chaham's Photography & Video"
-            className="h-20 w-auto mb-6 brightness-0 invert opacity-90"
+            className="w-24 h-auto mb-4"
           />
-
-          {/* Tagline */}
-          <p className="font-body text-cream/70 max-w-md mb-8">
-            Capturando momentos únicos e irrepetibles en Puerto Rico y Estados Unidos
-          </p>
 
           {/* Social Links */}
           <div className="flex gap-4 mb-8">
