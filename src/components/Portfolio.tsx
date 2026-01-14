@@ -14,83 +14,101 @@ import portfolioWeb5 from '@/assets/portfolio-web5.jpg';
 import portfolioWeb6 from '@/assets/portfolio-web6.jpg';
 import portfolioWeb7 from '@/assets/portfolio-web7.jpg';
 import portfolioMaternity from '@/assets/portfolio-maternity.jpg';
+import portfolioCorporativo1 from '@/assets/portfolio-corporativo1.jpg';
+import portfolioCorporativo2 from '@/assets/portfolio-corporativo2.jpg';
+import portfolioCorporativo3 from '@/assets/portfolio-corporativo3.jpg';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Lightbox from '@/components/Lightbox';
 
 const portfolioItems = [{
   id: 1,
-  title: 'Retratos',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioPortrait
 }, {
+  id: 19,
+  title: '',
+  category: '',
+  image: portfolioCorporativo1
+}, {
   id: 4,
-  title: 'Videografía',
-  category: 'Video',
+  title: '',
+  category: '',
   image: portfolioVideo
 }, {
   id: 6,
-  title: 'Parejas',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioCouple1
 }, {
+  id: 20,
+  title: '',
+  category: '',
+  image: portfolioCorporativo2
+}, {
   id: 7,
-  title: 'Atardecer',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioSunset
 }, {
   id: 8,
-  title: 'Sesión Especial',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioCoupleHorse
 }, {
   id: 9,
-  title: 'Baby Shower',
-  category: 'Eventos',
+  title: '',
+  category: '',
   image: portfolioBabyshower
 }, {
   id: 10,
-  title: 'Bodas',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioCouple2
 }, {
+  id: 21,
+  title: '',
+  category: '',
+  image: portfolioCorporativo3
+}, {
   id: 11,
-  title: 'Parejas Playa',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioWeb1
 }, {
   id: 12,
-  title: 'Novia',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioWeb2
 }, {
   id: 13,
-  title: 'Boda Playa',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioWeb3
 }, {
   id: 14,
-  title: 'Boda Colonial',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioWeb4
 }, {
   id: 15,
-  title: 'Parejas',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioWeb5
 }, {
   id: 16,
-  title: 'Boda Atardecer',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioWeb6
 }, {
   id: 17,
-  title: 'Boda Jardín',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioWeb7
 }, {
   id: 18,
-  title: 'Maternidad',
-  category: 'Fotografía',
+  title: '',
+  category: '',
   image: portfolioMaternity
 }];
 
