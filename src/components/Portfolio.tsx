@@ -87,7 +87,7 @@ const Portfolio = () => {
 
   return (
     <>
-      <section id="portafolio" className="py-20 md:py-32 bg-cream-dark">
+      <section className="min-h-[calc(100vh-64px)] py-12 md:py-16 bg-cream-dark flex flex-col justify-center">
         <div className="container mx-auto px-4">
           {/* Section Header */}
           <div className="text-center mb-16">
