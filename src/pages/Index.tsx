@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from '@/components/Header';
+import MobileNav from '@/components/MobileNav';
 import Hero from '@/components/Hero';
 import Portfolio from '@/components/Portfolio';
 import Videos from '@/components/Videos';
@@ -30,12 +31,13 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col pb-16 md:pb-0">
       <Header activeSection={activeSection} onNavigate={setActiveSection} />
       <main className="flex-1">
         {renderSection()}
       </main>
       <Footer onNavigate={setActiveSection} />
+      <MobileNav activeSection={activeSection} onNavigate={setActiveSection} />
     </div>
   );
 };
