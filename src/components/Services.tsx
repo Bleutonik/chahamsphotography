@@ -3,28 +3,28 @@ import { Badge } from '@/components/ui/badge';
 
 const services = [{
   icon: Heart,
-  title: 'Bodas',
+  title: 'BODAS',
   description: 'Capturamos cada momento mágico de tu día especial con elegancia y emoción.'
 }, {
   icon: Camera,
-  title: 'Retratos',
+  title: 'RETRATOS',
   description: 'Capturamos tu verdadera esencia a través de una lente experta. Diseñamos sesiones personalizadas que resaltan tu personalidad única en cada etapa:',
   categories: ['Modelos', 'Maternidad', 'Portrait Profesional', 'Y más']
 }, {
   icon: Video,
-  title: 'Videografía',
+  title: 'VIDEOGRAFÍA',
   description: 'Videos cinematográficos que cuentan tu historia de manera inolvidable.'
 }, {
   icon: Sparkles,
-  title: 'Quinceañeras',
+  title: 'QUINCEAÑERAS',
   description: 'Celebramos este momento especial con fotografías dignas de una princesa.'
 }, {
   icon: Users,
-  title: 'Familias',
+  title: 'FAMILIAS',
   description: 'Preservamos los lazos familiares en retratos llenos de amor y conexión.'
 }, {
   icon: Clock,
-  title: 'Eventos',
+  title: 'EVENTOS',
   description: 'Cobertura completa de tus eventos corporativos y sociales.'
 }];
 const Services = () => {
@@ -36,7 +36,7 @@ const Services = () => {
             Lo Que Ofrecemos
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-            Nuestros Servicios
+            NUESTROS SERVICIOS
           </h2>
           <div className="section-divider" />
           <p className="font-body text-muted-foreground max-w-2xl mx-auto text-lg">

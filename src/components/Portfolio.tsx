@@ -143,7 +143,7 @@ const Portfolio = () => {
               Mi Trabajo
             </p>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-              Portafolio
+              PORTAFOLIO
             </h2>
             <div className="section-divider" />
             <p className="font-body text-muted-foreground max-w-2xl mx-auto text-lg">

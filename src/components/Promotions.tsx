@@ -1,26 +1,40 @@
 import { Button } from '@/components/ui/button';
-import { Sparkles, Gift, Calendar } from 'lucide-react';
+import { Sparkles, Gift, Calendar, Video, Film } from 'lucide-react';
 
 const promotions = [
   {
     icon: Gift,
-    title: 'Paquete Bodas 2025',
-    description: '8 horas de cobertura, 500+ fotos editadas, video highlight de 5 min, álbum de lujo incluido.',
-    price: 'Desde $2,500',
+    title: 'OFERTAS DE FOTOGRAFÍA (BODA)',
+    description: 'Love story 10 a 15 fotos editadas (de regalo), 4 horas de servicio del día del evento, fotos editadas, fotos entregadas digital.',
+    price: 'Desde $749.99',
     badge: 'Más Popular',
   },
   {
     icon: Sparkles,
-    title: 'Sesión Quinceañera',
-    description: 'Sesión pre-quinceañera, cobertura del evento, 200 fotos editadas y video resumen.',
-    price: 'Desde $1,200',
+    title: 'OFERTAS DE FOTOGRAFÍA (QUINCEAÑERA O SWEET 16)',
+    description: 'Sesión pre-quinceañera 10 a 15 fotos editadas & 1 min video teaser (de regalo), 4 horas de servicio del día del evento, fotos editadas, entregadas digital con permiso de impresión.',
+    price: 'Desde $649.99',
+    badge: null,
+  },
+  {
+    icon: Video,
+    title: 'OFERTAS DE VIDEO (BODAS)',
+    description: 'Love Story 1 Min teaser (de regalo), 4 horas de servicio en el día del evento, 1-2 min teaser, Video Recap del evento.',
+    price: 'Desde $979.99',
+    badge: null,
+  },
+  {
+    icon: Film,
+    title: 'OFERTAS DE VIDEO (QUINCEAÑERA O SWEET 16)',
+    description: 'Video Pre-15, 1 Min teaser (de regalo), 4 horas de servicio en el día del evento, 1-2 min teaser, Video Recap del evento.',
+    price: 'Desde $879.99',
     badge: null,
   },
   {
     icon: Calendar,
-    title: 'Mini Sesión',
-    description: '30 minutos, 25 fotos digitales editadas. Perfecto para retratos y parejas.',
-    price: 'Desde $250',
+    title: 'SESIONES DE FOTOS',
+    description: '30 minutos, 10 a 20 fotos digitales editadas. Perfecto para retratos, parejas (y más...)',
+    price: 'Desde $150.00',
     badge: 'Nuevo',
   },
 ];
@@ -39,16 +53,16 @@ const Promotions = () => {
             Ofertas Especiales
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-4">
-            Promociones
+            OFERTAS
           </h2>
           <div className="w-24 h-px bg-gold mx-auto my-8" />
           <p className="font-body text-cream/80 max-w-2xl mx-auto text-lg">
-            Aprovecha nuestras promociones exclusivas y reserva tu sesión hoy
+            Aprovecha nuestras ofertas exclusivas y reserva tu sesión hoy
           </p>
         </div>
 
         {/* Promotions Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {promotions.map((promo, index) => (
             <div
               key={promo.title}
@@ -63,7 +77,7 @@ const Promotions = () => {
               <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center mb-6">
                 <promo.icon className="w-7 h-7 text-gold" />
               </div>
-              <h3 className="font-display text-xl font-semibold text-cream mb-3">
+              <h3 className="font-display text-lg font-semibold text-cream mb-3">
                 {promo.title}
               </h3>
               <p className="font-body text-cream/70 text-sm leading-relaxed mb-6">
