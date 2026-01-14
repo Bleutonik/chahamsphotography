@@ -1,19 +1,34 @@
 import cameraLogo from '@/assets/camera-logo.png';
 import { Instagram, Facebook, MessageCircle } from 'lucide-react';
+import { SectionType } from '@/pages/Index';
 
-const Footer = () => {
+interface FooterProps {
+  onNavigate: (section: SectionType) => void;
+}
+
+const Footer = ({ onNavigate }: FooterProps) => {
   const currentYear = new Date().getFullYear();
+
+  const navLinks: { id: SectionType; label: string }[] = [
+    { id: 'inicio', label: 'Inicio' },
+    { id: 'portafolio', label: 'Portafolio' },
+    { id: 'videos', label: 'Videos' },
+    { id: 'servicios', label: 'Servicios' },
+    { id: 'promociones', label: 'Promociones' },
+  ];
 
   return (
     <footer className="bg-secondary text-secondary-foreground py-12">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center">
           {/* Logo */}
-          <img
-            src={cameraLogo}
-            alt="Chaham's Photography & Video"
-            className="w-24 h-auto mb-4"
-          />
+          <button onClick={() => onNavigate('inicio')} className="hover:opacity-80 transition-opacity">
+            <img
+              src={cameraLogo}
+              alt="Chaham's Photography & Video"
+              className="w-24 h-auto mb-4"
+            />
+          </button>
 
           {/* Social Links */}
           <div className="flex gap-4 mb-8">
@@ -48,19 +63,21 @@ const Footer = () => {
 
           {/* Navigation */}
           <nav className="flex flex-wrap justify-center gap-6 mb-8">
-            <a href="#inicio" className="font-body text-sm text-cream/70 hover:text-gold transition-colors">
-              Inicio
-            </a>
-            <a href="#portafolio" className="font-body text-sm text-cream/70 hover:text-gold transition-colors">
-              Portafolio
-            </a>
-            <a href="#servicios" className="font-body text-sm text-cream/70 hover:text-gold transition-colors">
-              Servicios
-            </a>
-            <a href="#promociones" className="font-body text-sm text-cream/70 hover:text-gold transition-colors">
-              Promociones
-            </a>
-            <a href="#contacto" className="font-body text-sm text-cream/70 hover:text-gold transition-colors">
+            {navLinks.map((link) => (
+              <button
+                key={link.id}
+                onClick={() => onNavigate(link.id)}
+                className="font-body text-sm text-cream/70 hover:text-gold transition-colors"
+              >
+                {link.label}
+              </button>
+            ))}
+            <a 
+              href="https://wa.me/17873630620" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="font-body text-sm text-cream/70 hover:text-gold transition-colors"
+            >
               Contacto
             </a>
           </nav>

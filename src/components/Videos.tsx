@@ -2,7 +2,7 @@ import { Play } from 'lucide-react';
 
 const Videos = () => {
   return (
-    <section id="videos" className="py-20 md:py-32 bg-background">
+    <section className="min-h-[calc(100vh-64px)] py-12 md:py-16 bg-background flex flex-col justify-center">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">

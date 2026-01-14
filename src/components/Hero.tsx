@@ -1,14 +1,15 @@
 import { Button } from '@/components/ui/button';
-import { ChevronDown } from 'lucide-react';
 import heroImage from '@/assets/hero-wedding.jpg';
 import cameraLogo from '@/assets/camera-logo.png';
+import { SectionType } from '@/pages/Index';
 
-const Hero = () => {
+interface HeroProps {
+  onNavigate: (section: SectionType) => void;
+}
+
+const Hero = ({ onNavigate }: HeroProps) => {
   return (
-    <section
-      id="inicio"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-    >
+    <section className="relative min-h-[calc(100vh-64px)] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -37,24 +38,26 @@ const Hero = () => {
             Capturando momentos únicos e irrepetibles en Puerto Rico y Estados Unidos
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="gold" size="xl" asChild>
-              <a href="#portafolio">Ver Portafolio</a>
+            <Button 
+              variant="gold" 
+              size="xl" 
+              onClick={() => onNavigate('portafolio')}
+            >
+              Ver Portafolio
             </Button>
-            <Button variant="elegant" size="xl" className="border-cream text-cream hover:bg-cream hover:text-coffee" asChild>
-              <a href="https://wa.me/17873630620" target="_blank" rel="noopener noreferrer">Contactar</a>
+            <Button 
+              variant="elegant" 
+              size="xl" 
+              className="border-cream text-cream hover:bg-cream hover:text-coffee" 
+              asChild
+            >
+              <a href="https://wa.me/17873630620" target="_blank" rel="noopener noreferrer">
+                Contactar
+              </a>
             </Button>
           </div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <a
-        href="#portafolio"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-cream/80 hover:text-cream transition-colors duration-300 animate-bounce"
-        aria-label="Scroll to portfolio"
-      >
-        <ChevronDown size={32} />
-      </a>
     </section>
   );
 };

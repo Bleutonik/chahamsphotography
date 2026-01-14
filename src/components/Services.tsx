@@ -28,7 +28,7 @@ const services = [{
   description: 'Cobertura completa de tus eventos corporativos y sociales.'
 }];
 const Services = () => {
-  return <section id="servicios" className="py-20 md:py-32 bg-card">
+  return <section className="min-h-[calc(100vh-64px)] py-12 md:py-16 bg-card flex flex-col justify-center">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
