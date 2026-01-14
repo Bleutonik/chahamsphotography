@@ -17,20 +17,20 @@ const MobileNav = ({ activeSection, onNavigate }: MobileNavProps) => {
   ];
 
   return (
-    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-t border-border shadow-elegant">
-      <div className="flex items-center justify-around py-2 px-1">
+    <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-t border-border shadow-elegant safe-area-bottom">
+      <div className="flex items-center justify-evenly py-1.5 px-0.5">
         {navItems.map((item) => (
           <button
             key={item.id}
             onClick={() => onNavigate(item.id)}
-            className={`flex flex-col items-center gap-1 px-3 py-2 rounded-lg transition-all duration-300 min-w-[60px] ${
+            className={`flex flex-col items-center gap-0.5 px-1 py-1.5 rounded-md transition-all duration-300 flex-1 ${
               activeSection === item.id
                 ? 'text-primary'
                 : 'text-muted-foreground'
             }`}
           >
             <item.icon className={`w-5 h-5 ${activeSection === item.id ? 'text-primary' : ''}`} />
-            <span className={`text-[10px] font-body ${activeSection === item.id ? 'font-semibold' : ''}`}>
+            <span className={`text-[9px] font-body leading-tight ${activeSection === item.id ? 'font-semibold' : ''}`}>
               {item.label}
             </span>
           </button>
@@ -39,10 +39,10 @@ const MobileNav = ({ activeSection, onNavigate }: MobileNavProps) => {
           href="https://wa.me/17873630620"
           target="_blank"
           rel="noopener noreferrer"
-          className="flex flex-col items-center gap-1 px-3 py-2 rounded-lg text-gold min-w-[60px]"
+          className="flex flex-col items-center gap-0.5 px-1 py-1.5 rounded-md text-gold flex-1"
         >
           <MessageCircle className="w-5 h-5" />
-          <span className="text-[10px] font-body font-semibold">Contacto</span>
+          <span className="text-[9px] font-body font-semibold leading-tight">Contacto</span>
         </a>
       </div>
     </nav>
