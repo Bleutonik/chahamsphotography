@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import portfolioPortrait from '@/assets/portfolio-portrait.jpg';
 import portfolioWedding from '@/assets/portfolio-wedding.jpg';
-import portfolioFamily from '@/assets/portfolio-family.jpg';
+
 import portfolioVideo from '@/assets/portfolio-video.jpg';
 import portfolioQuince from '@/assets/portfolio-quince.jpg';
 import portfolioCouple1 from '@/assets/portfolio-couple-1.jpg';
@@ -22,11 +22,6 @@ const portfolioItems = [{
   title: 'Bodas',
   category: 'Fotografía & Video',
   image: portfolioWedding
-}, {
-  id: 3,
-  title: 'Familias',
-  category: 'Fotografía',
-  image: portfolioFamily
 }, {
   id: 4,
   title: 'Videografía',
