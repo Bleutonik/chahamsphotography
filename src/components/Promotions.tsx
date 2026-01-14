@@ -87,7 +87,13 @@ const Promotions = () => {
                 {promo.price}
               </p>
               <Button variant="gold" className="w-full" asChild>
-                <a href="#contacto">Reservar</a>
+                <a 
+                  href={`https://wa.me/17873630620?text=${encodeURIComponent(`Hola, me interesa reservar: ${promo.title}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Reservar
+                </a>
               </Button>
             </div>
           ))}
