@@ -12,7 +12,8 @@ const Header = ({ activeSection, onNavigate }: HeaderProps) => {
     { id: 'portafolio', label: 'Portafolio' },
     { id: 'videos', label: 'Videos' },
     { id: 'servicios', label: 'Servicios' },
-    { id: 'promociones', label: 'Promociones' },
+    { id: 'promociones', label: 'Ofertas' },
+    { id: 'sobremi', label: 'Sobre Mí' },
   ];
 
   const handleNavClick = (sectionId: SectionType) => {

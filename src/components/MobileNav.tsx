@@ -1,4 +1,4 @@
-import { Home, Image, Video, Briefcase, Gift, MessageCircle } from 'lucide-react';
+import { Home, Image, Video, Briefcase, Gift, MessageCircle, User } from 'lucide-react';
 import { SectionType } from '@/pages/Index';
 
 interface MobileNavProps {
@@ -12,7 +12,8 @@ const MobileNav = ({ activeSection, onNavigate }: MobileNavProps) => {
     { id: 'portafolio', label: 'Fotos', icon: Image },
     { id: 'videos', label: 'Videos', icon: Video },
     { id: 'servicios', label: 'Servicios', icon: Briefcase },
-    { id: 'promociones', label: 'Promos', icon: Gift },
+    { id: 'promociones', label: 'Ofertas', icon: Gift },
+    { id: 'sobremi', label: 'Sobre Mí', icon: User },
   ];
 
   return (
