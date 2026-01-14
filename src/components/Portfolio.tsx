@@ -3,7 +3,7 @@ import portfolioPortrait from '@/assets/portfolio-portrait.jpg';
 import portfolioWedding from '@/assets/portfolio-wedding.jpg';
 
 import portfolioVideo from '@/assets/portfolio-video.jpg';
-import portfolioQuince from '@/assets/portfolio-quince.jpg';
+
 import portfolioCouple1 from '@/assets/portfolio-couple-1.jpg';
 import portfolioSunset from '@/assets/portfolio-sunset.jpg';
 import portfolioCoupleHorse from '@/assets/portfolio-couple-horse.jpg';
@@ -27,11 +27,6 @@ const portfolioItems = [{
   title: 'Videografía',
   category: 'Video',
   image: portfolioVideo
-}, {
-  id: 5,
-  title: 'Quinceañera',
-  category: 'Fotografía & Video',
-  image: portfolioQuince
 }, {
   id: 6,
   title: 'Parejas',
