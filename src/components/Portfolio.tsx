@@ -1,14 +1,19 @@
 import { useState } from 'react';
 import portfolioPortrait from '@/assets/portfolio-portrait.jpg';
-
-
 import portfolioVideo from '@/assets/portfolio-video.jpg';
-
 import portfolioCouple1 from '@/assets/portfolio-couple-1.jpg';
 import portfolioSunset from '@/assets/portfolio-sunset.jpg';
 import portfolioCoupleHorse from '@/assets/portfolio-couple-horse.jpg';
 import portfolioBabyshower from '@/assets/portfolio-babyshower.jpg';
 import portfolioCouple2 from '@/assets/portfolio-couple-2.jpg';
+import portfolioWeb1 from '@/assets/portfolio-web1.jpg';
+import portfolioWeb2 from '@/assets/portfolio-web2.jpg';
+import portfolioWeb3 from '@/assets/portfolio-web3.jpg';
+import portfolioWeb4 from '@/assets/portfolio-web4.jpg';
+import portfolioWeb5 from '@/assets/portfolio-web5.jpg';
+import portfolioWeb6 from '@/assets/portfolio-web6.jpg';
+import portfolioWeb7 from '@/assets/portfolio-web7.jpg';
+import portfolioMaternity from '@/assets/portfolio-maternity.jpg';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Lightbox from '@/components/Lightbox';
 
@@ -47,6 +52,46 @@ const portfolioItems = [{
   title: 'Bodas',
   category: 'Fotografía',
   image: portfolioCouple2
+}, {
+  id: 11,
+  title: 'Parejas Playa',
+  category: 'Fotografía',
+  image: portfolioWeb1
+}, {
+  id: 12,
+  title: 'Novia',
+  category: 'Fotografía',
+  image: portfolioWeb2
+}, {
+  id: 13,
+  title: 'Boda Playa',
+  category: 'Fotografía',
+  image: portfolioWeb3
+}, {
+  id: 14,
+  title: 'Boda Colonial',
+  category: 'Fotografía',
+  image: portfolioWeb4
+}, {
+  id: 15,
+  title: 'Parejas',
+  category: 'Fotografía',
+  image: portfolioWeb5
+}, {
+  id: 16,
+  title: 'Boda Atardecer',
+  category: 'Fotografía',
+  image: portfolioWeb6
+}, {
+  id: 17,
+  title: 'Boda Jardín',
+  category: 'Fotografía',
+  image: portfolioWeb7
+}, {
+  id: 18,
+  title: 'Maternidad',
+  category: 'Fotografía',
+  image: portfolioMaternity
 }];
 
 const Portfolio = () => {
