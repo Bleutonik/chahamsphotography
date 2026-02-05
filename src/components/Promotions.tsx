@@ -1,45 +1,48 @@
 import { Button } from '@/components/ui/button';
 import { Sparkles, Gift, Calendar, Video, Film } from 'lucide-react';
-
-const promotions = [
-  {
-    icon: Gift,
-    title: 'OFERTAS DE FOTOGRAFÍA (BODA)',
-    description: 'Love story 10 a 15 fotos editadas (de regalo), 4 horas de servicio del día del evento, fotos editadas, fotos entregadas digital.',
-    price: 'Desde $749.99',
-    badge: 'Más Popular',
-  },
-  {
-    icon: Sparkles,
-    title: 'OFERTAS DE FOTOGRAFÍA (QUINCEAÑERA O SWEET 16)',
-    description: 'Sesión pre-quinceañera 10 a 15 fotos editadas & 1 min video teaser (de regalo), 4 horas de servicio del día del evento, fotos editadas, entregadas digital con permiso de impresión.',
-    price: 'Desde $649.99',
-    badge: null,
-  },
-  {
-    icon: Video,
-    title: 'OFERTAS DE VIDEO (BODAS)',
-    description: 'Love Story 1 Min teaser (de regalo), 4 horas de servicio en el día del evento, 1-2 min teaser, Video Recap del evento.',
-    price: 'Desde $979.99',
-    badge: null,
-  },
-  {
-    icon: Film,
-    title: 'OFERTAS DE VIDEO (QUINCEAÑERA O SWEET 16)',
-    description: 'Video Pre-15, 1 Min teaser (de regalo), 4 horas de servicio en el día del evento, 1-2 min teaser, Video Recap del evento.',
-    price: 'Desde $879.99',
-    badge: null,
-  },
-  {
-    icon: Calendar,
-    title: 'SESIONES DE FOTOS',
-    description: '30 minutos, 10 a 20 fotos digitales editadas. Perfecto para retratos, parejas (y más...)',
-    price: 'Desde $150.00',
-    badge: 'Nuevo',
-  },
-];
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Promotions = () => {
+  const { t } = useLanguage();
+
+  const promotions = [
+    {
+      icon: Gift,
+      titleKey: 'promotions.weddingPhoto',
+      descriptionKey: 'promotions.weddingPhotoDesc',
+      price: 'Desde $749.99',
+      badgeKey: 'promotions.mostPopular',
+    },
+    {
+      icon: Sparkles,
+      titleKey: 'promotions.quincePhoto',
+      descriptionKey: 'promotions.quincePhotoDesc',
+      price: 'Desde $649.99',
+      badgeKey: null,
+    },
+    {
+      icon: Video,
+      titleKey: 'promotions.weddingVideo',
+      descriptionKey: 'promotions.weddingVideoDesc',
+      price: 'Desde $979.99',
+      badgeKey: null,
+    },
+    {
+      icon: Film,
+      titleKey: 'promotions.quinceVideo',
+      descriptionKey: 'promotions.quinceVideoDesc',
+      price: 'Desde $879.99',
+      badgeKey: null,
+    },
+    {
+      icon: Calendar,
+      titleKey: 'promotions.photoSessions',
+      descriptionKey: 'promotions.photoSessionsDesc',
+      price: 'Desde $150.00',
+      badgeKey: 'promotions.new',
+    },
+  ];
+
   return (
     <section className="min-h-[calc(100vh-64px)] py-12 md:py-16 bg-secondary text-secondary-foreground relative overflow-hidden flex flex-col justify-center">
       {/* Decorative elements */}
@@ -50,14 +53,14 @@ const Promotions = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="font-body text-gold-light text-sm tracking-widest uppercase mb-3">
-            Ofertas Especiales
+            {t('promotions.subtitle')}
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-4">
-            OFERTAS
+            {t('promotions.title')}
           </h2>
           <div className="w-24 h-px bg-gold mx-auto my-8" />
           <p className="font-body text-cream/80 max-w-2xl mx-auto text-lg">
-            Aprovecha nuestras ofertas exclusivas y reserva tu sesión hoy
+            {t('promotions.description')}
           </p>
         </div>
 
@@ -65,34 +68,34 @@ const Promotions = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {promotions.map((promo, index) => (
             <div
-              key={promo.title}
+              key={promo.titleKey}
               className="group relative bg-coffee-light/20 backdrop-blur-sm rounded-lg p-8 border border-gold/20 hover:border-gold/40 transition-all duration-500 hover:-translate-y-2"
               style={{ animationDelay: `${index * 0.15}s` }}
             >
-              {promo.badge && (
+              {promo.badgeKey && (
                 <span className="absolute -top-3 right-6 bg-gold text-coffee text-xs font-body font-semibold px-4 py-1 rounded-full">
-                  {promo.badge}
+                  {t(promo.badgeKey)}
                 </span>
               )}
               <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center mb-6">
                 <promo.icon className="w-7 h-7 text-gold" />
               </div>
               <h3 className="font-display text-lg font-semibold text-cream mb-3">
-                {promo.title}
+                {t(promo.titleKey)}
               </h3>
               <p className="font-body text-cream/70 text-sm leading-relaxed mb-6">
-                {promo.description}
+                {t(promo.descriptionKey)}
               </p>
               <p className="font-display text-2xl font-bold text-gold mb-6">
                 {promo.price}
               </p>
               <Button variant="gold" className="w-full" asChild>
                 <a 
-                  href={`https://wa.me/17873630620?text=${encodeURIComponent(`Hola, me interesa reservar: ${promo.title}`)}`}
+                  href={`https://wa.me/17873630620?text=${encodeURIComponent(`Hola, me interesa reservar: ${t(promo.titleKey)}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Reservar
+                  {t('promotions.reserve')}
                 </a>
               </Button>
             </div>

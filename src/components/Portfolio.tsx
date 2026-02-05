@@ -19,6 +19,7 @@ import portfolioCorporativo2 from '@/assets/portfolio-corporativo2.jpg';
 import portfolioCorporativo3 from '@/assets/portfolio-corporativo3.jpg';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Lightbox from '@/components/Lightbox';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const portfolioItems = [{
   id: 1,
@@ -113,6 +114,7 @@ const portfolioItems = [{
 }];
 
 const Portfolio = () => {
+  const { t, language } = useLanguage();
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -140,14 +142,16 @@ const Portfolio = () => {
           {/* Section Header */}
           <div className="text-center mb-16">
             <p className="font-body text-primary text-sm tracking-widest uppercase mb-3">
-              Mi Trabajo
+              {t('portfolio.subtitle')}
             </p>
             <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-              PORTAFOLIO
+              {t('portfolio.title')}
             </h2>
             <div className="section-divider" />
             <p className="font-body text-muted-foreground max-w-2xl mx-auto text-lg">
-              Cada imagen cuenta una historia única. Explora mi colección de momentos capturados con pasión y dedicación.
+              {language === 'es' 
+                ? 'Cada imagen cuenta una historia única. Explora mi colección de momentos capturados con pasión y dedicación.'
+                : 'Each image tells a unique story. Explore my collection of moments captured with passion and dedication.'}
             </p>
           </div>
 
@@ -171,7 +175,7 @@ const Portfolio = () => {
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
                         <span className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 font-body text-sm tracking-wider">
-                          Ver imagen
+                          {language === 'es' ? 'Ver imagen' : 'View image'}
                         </span>
                       </div>
                     </div>

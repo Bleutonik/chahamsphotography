@@ -1,20 +1,22 @@
 import cameraLogo from '@/assets/camera-logo.png';
 import { Instagram, Facebook, MessageCircle } from 'lucide-react';
 import { SectionType } from '@/pages/Index';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface FooterProps {
   onNavigate: (section: SectionType) => void;
 }
 
 const Footer = ({ onNavigate }: FooterProps) => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
-  const navLinks: { id: SectionType; label: string }[] = [
-    { id: 'inicio', label: 'Inicio' },
-    { id: 'portafolio', label: 'Portafolio' },
-    { id: 'videos', label: 'Videos' },
-    { id: 'servicios', label: 'Servicios' },
-    { id: 'promociones', label: 'Promociones' },
+  const navLinks: { id: SectionType; labelKey: string }[] = [
+    { id: 'inicio', labelKey: 'nav.home' },
+    { id: 'portafolio', labelKey: 'nav.portfolio' },
+    { id: 'videos', labelKey: 'nav.videos' },
+    { id: 'servicios', labelKey: 'nav.services' },
+    { id: 'promociones', labelKey: 'nav.promotions' },
   ];
 
   return (
@@ -69,7 +71,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
                 onClick={() => onNavigate(link.id)}
                 className="font-body text-sm text-cream/70 hover:text-gold transition-colors"
               >
-                {link.label}
+                {t(link.labelKey)}
               </button>
             ))}
             <a 
@@ -78,7 +80,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
               rel="noopener noreferrer"
               className="font-body text-sm text-cream/70 hover:text-gold transition-colors"
             >
-              Contacto
+              {t('nav.contact')}
             </a>
           </nav>
 
@@ -87,7 +89,7 @@ const Footer = ({ onNavigate }: FooterProps) => {
 
           {/* Copyright */}
           <p className="font-body text-sm text-cream/50">
-            © {currentYear} Chaham's Photography & Video. Todos los derechos reservados.
+            © {currentYear} Chaham's Photography & Video. {t('footer.rights')}
           </p>
         </div>
       </div>

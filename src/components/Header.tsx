@@ -1,5 +1,7 @@
 import logo from '@/assets/logo.png';
 import { SectionType } from '@/pages/Index';
+import { useLanguage } from '@/contexts/LanguageContext';
+import { Globe } from 'lucide-react';
 
 interface HeaderProps {
   activeSection: SectionType;
@@ -7,13 +9,15 @@ interface HeaderProps {
 }
 
 const Header = ({ activeSection, onNavigate }: HeaderProps) => {
-  const navLinks: { id: SectionType; label: string }[] = [
-    { id: 'inicio', label: 'Inicio' },
-    { id: 'portafolio', label: 'Portafolio' },
-    { id: 'videos', label: 'Videos' },
-    { id: 'servicios', label: 'Servicios' },
-    { id: 'promociones', label: 'Ofertas' },
-    { id: 'sobremi', label: 'Sobre Mí' },
+  const { language, toggleLanguage, t } = useLanguage();
+
+  const navLinks: { id: SectionType; labelKey: string }[] = [
+    { id: 'inicio', labelKey: 'nav.home' },
+    { id: 'portafolio', labelKey: 'nav.portfolio' },
+    { id: 'videos', labelKey: 'nav.videos' },
+    { id: 'servicios', labelKey: 'nav.services' },
+    { id: 'promociones', labelKey: 'nav.promotions' },
+    { id: 'sobremi', labelKey: 'nav.about' },
   ];
 
   const handleNavClick = (sectionId: SectionType) => {
@@ -43,7 +47,7 @@ const Header = ({ activeSection, onNavigate }: HeaderProps) => {
                   : 'text-foreground hover:bg-muted hover:text-primary'
               }`}
             >
-              {link.label}
+              {t(link.labelKey)}
             </button>
           ))}
           <a
@@ -52,8 +56,17 @@ const Header = ({ activeSection, onNavigate }: HeaderProps) => {
             rel="noopener noreferrer"
             className="font-body text-sm tracking-wide px-4 py-2 rounded-md bg-gold text-coffee hover:bg-gold-dark transition-all duration-300 ml-2"
           >
-            Contacto
+            {t('nav.contact')}
           </a>
+          {/* Language Toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="ml-2 flex items-center gap-1.5 px-3 py-2 rounded-md bg-muted hover:bg-muted/80 text-foreground transition-all duration-300 font-body text-sm"
+            title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+          >
+            <Globe className="w-4 h-4" />
+            <span className="font-semibold">{language === 'es' ? 'EN' : 'ES'}</span>
+          </button>
         </nav>
 
         {/* Empty div for mobile layout balance */}
