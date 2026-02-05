@@ -1,20 +1,25 @@
 import { Play } from 'lucide-react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Videos = () => {
+  const { t, language } = useLanguage();
+
   return (
     <section className="min-h-[calc(100vh-64px)] py-12 md:py-16 bg-background flex flex-col justify-center">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="font-body text-primary text-sm tracking-widest uppercase mb-3">
-            Producciones Audiovisuales
+            {t('videos.subtitle')}
           </p>
           <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-            VIDEOS
+            {t('videos.title')}
           </h2>
           <div className="section-divider" />
           <p className="font-body text-muted-foreground max-w-2xl mx-auto text-lg">
-            Creamos videos cinematográficos que capturan la esencia de cada momento especial.
+            {language === 'es' 
+              ? 'Creamos videos cinematográficos que capturan la esencia de cada momento especial.'
+              : 'We create cinematic videos that capture the essence of every special moment.'}
           </p>
         </div>
 
@@ -37,7 +42,7 @@ const Videos = () => {
             <div className="inline-flex items-center gap-2 text-primary">
               <Play className="w-5 h-5" />
               <span className="font-body text-sm tracking-wider uppercase">
-                Video Promocional
+                {language === 'es' ? 'Video Promocional' : 'Promotional Video'}
               </span>
             </div>
           </div>

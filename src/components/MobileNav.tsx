@@ -1,5 +1,6 @@
-import { Home, Image, Video, Briefcase, Gift, MessageCircle, User } from 'lucide-react';
+import { Home, Image, Video, Briefcase, Gift, MessageCircle, User, Globe } from 'lucide-react';
 import { SectionType } from '@/pages/Index';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface MobileNavProps {
   activeSection: SectionType;
@@ -7,13 +8,14 @@ interface MobileNavProps {
 }
 
 const MobileNav = ({ activeSection, onNavigate }: MobileNavProps) => {
-  const navItems: { id: SectionType; label: string; icon: typeof Home }[] = [
-    { id: 'inicio', label: 'Inicio', icon: Home },
-    { id: 'portafolio', label: 'Fotos', icon: Image },
-    { id: 'videos', label: 'Videos', icon: Video },
-    { id: 'servicios', label: 'Servicios', icon: Briefcase },
-    { id: 'promociones', label: 'Ofertas', icon: Gift },
-    { id: 'sobremi', label: 'Sobre Mí', icon: User },
+  const { language, toggleLanguage, t } = useLanguage();
+
+  const navItems: { id: SectionType; labelKey: string; icon: typeof Home }[] = [
+    { id: 'inicio', labelKey: 'nav.home', icon: Home },
+    { id: 'portafolio', labelKey: 'nav.photos', icon: Image },
+    { id: 'videos', labelKey: 'nav.videos', icon: Video },
+    { id: 'servicios', labelKey: 'nav.services', icon: Briefcase },
+    { id: 'promociones', labelKey: 'nav.promotions', icon: Gift },
   ];
 
   return (
@@ -31,7 +33,7 @@ const MobileNav = ({ activeSection, onNavigate }: MobileNavProps) => {
           >
             <item.icon className={`w-5 h-5 ${activeSection === item.id ? 'text-primary' : ''}`} />
             <span className={`text-[9px] font-body leading-tight ${activeSection === item.id ? 'font-semibold' : ''}`}>
-              {item.label}
+              {t(item.labelKey)}
             </span>
           </button>
         ))}
@@ -42,8 +44,18 @@ const MobileNav = ({ activeSection, onNavigate }: MobileNavProps) => {
           className="flex flex-col items-center gap-0.5 px-1 py-1.5 rounded-md text-gold flex-1"
         >
           <MessageCircle className="w-5 h-5" />
-          <span className="text-[9px] font-body font-semibold leading-tight">Contacto</span>
+          <span className="text-[9px] font-body font-semibold leading-tight">{t('nav.contact')}</span>
         </a>
+        {/* Language Toggle for Mobile */}
+        <button
+          onClick={toggleLanguage}
+          className="flex flex-col items-center gap-0.5 px-1 py-1.5 rounded-md text-muted-foreground flex-1"
+        >
+          <Globe className="w-5 h-5" />
+          <span className="text-[9px] font-body font-semibold leading-tight">
+            {language === 'es' ? 'EN' : 'ES'}
+          </span>
+        </button>
       </div>
     </nav>
   );
