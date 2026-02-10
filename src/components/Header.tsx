@@ -69,8 +69,15 @@ const Header = ({ activeSection, onNavigate }: HeaderProps) => {
           </button>
         </nav>
 
-        {/* Empty div for mobile layout balance */}
-        <div className="md:hidden w-10" />
+        {/* Language Toggle for Mobile */}
+        <button
+          onClick={toggleLanguage}
+          className="md:hidden flex items-center gap-1 px-2 py-1.5 rounded-md bg-muted hover:bg-muted/80 text-foreground transition-all duration-300 font-body text-xs"
+          title={language === 'es' ? 'Switch to English' : 'Cambiar a Español'}
+        >
+          <Globe className="w-4 h-4" />
+          <span className="font-semibold">{language === 'es' ? 'EN' : 'ES'}</span>
+        </button>
       </div>
     </header>
   );
