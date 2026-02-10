@@ -1,4 +1,4 @@
-import { Home, Image, Video, Briefcase, Gift, MessageCircle, User, Globe } from 'lucide-react';
+import { Home, Image, Video, Briefcase, Gift, MessageCircle } from 'lucide-react';
 import { SectionType } from '@/pages/Index';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -46,16 +46,6 @@ const MobileNav = ({ activeSection, onNavigate }: MobileNavProps) => {
           <MessageCircle className="w-5 h-5" />
           <span className="text-[9px] font-body font-semibold leading-tight">{t('nav.contact')}</span>
         </a>
-        {/* Language Toggle for Mobile */}
-        <button
-          onClick={toggleLanguage}
-          className="flex flex-col items-center gap-0.5 px-1 py-1.5 rounded-md text-muted-foreground flex-1"
-        >
-          <Globe className="w-5 h-5" />
-          <span className="text-[9px] font-body font-semibold leading-tight">
-            {language === 'es' ? 'EN' : 'ES'}
-          </span>
-        </button>
       </div>
     </nav>
   );
