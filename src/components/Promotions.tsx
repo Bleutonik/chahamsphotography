@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Sparkles, Gift, Calendar, Video, Film } from 'lucide-react';
+import { Diamond, Camera, Film, Video, Clapperboard } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Promotions = () => {
@@ -7,50 +7,53 @@ const Promotions = () => {
 
   const promotions = [
     {
-      icon: Gift,
-      titleKey: 'promotions.weddingPhoto',
-      descriptionKey: 'promotions.weddingPhotoDesc',
-      price: 'Desde $749.99',
+      icon: Diamond,
+      titleKey: 'promotions.diamond',
+      descriptionKey: 'promotions.diamondDesc',
+      price: '$5,500',
       badgeKey: 'promotions.mostPopular',
+      featured: true,
     },
     {
-      icon: Sparkles,
-      titleKey: 'promotions.quincePhoto',
-      descriptionKey: 'promotions.quincePhotoDesc',
-      price: 'Desde $649.99',
-      badgeKey: null,
-    },
-    {
-      icon: Video,
-      titleKey: 'promotions.weddingVideo',
-      descriptionKey: 'promotions.weddingVideoDesc',
-      price: 'Desde $979.99',
-      badgeKey: null,
+      icon: Camera,
+      titleKey: 'promotions.premiumPhoto',
+      descriptionKey: 'promotions.premiumPhotoDesc',
+      price: '$2,800',
+      badgeKey: 'promotions.bestSeller',
+      featured: false,
     },
     {
       icon: Film,
-      titleKey: 'promotions.quinceVideo',
-      descriptionKey: 'promotions.quinceVideoDesc',
-      price: 'Desde $879.99',
+      titleKey: 'promotions.deluxePhoto',
+      descriptionKey: 'promotions.deluxePhotoDesc',
+      price: '$2,500',
       badgeKey: null,
+      featured: false,
     },
     {
-      icon: Calendar,
-      titleKey: 'promotions.photoSessions',
-      descriptionKey: 'promotions.photoSessionsDesc',
-      price: 'Desde $150.00',
-      badgeKey: 'promotions.new',
+      icon: Video,
+      titleKey: 'promotions.premiumVideo',
+      descriptionKey: 'promotions.premiumVideoDesc',
+      price: '$2,800',
+      badgeKey: 'promotions.bestSeller',
+      featured: false,
+    },
+    {
+      icon: Clapperboard,
+      titleKey: 'promotions.deluxeVideo',
+      descriptionKey: 'promotions.deluxeVideoDesc',
+      price: '$2,500',
+      badgeKey: null,
+      featured: false,
     },
   ];
 
   return (
     <section className="min-h-[calc(100vh-64px)] py-12 md:py-16 bg-secondary text-secondary-foreground relative overflow-hidden flex flex-col justify-center">
-      {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-64 h-64 bg-gold/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
 
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section Header */}
         <div className="text-center mb-16">
           <p className="font-body text-gold-light text-sm tracking-widest uppercase mb-3">
             {t('promotions.subtitle')}
@@ -64,12 +67,15 @@ const Promotions = () => {
           </p>
         </div>
 
-        {/* Promotions Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {promotions.map((promo, index) => (
             <div
               key={promo.titleKey}
-              className="group relative bg-coffee-light/20 backdrop-blur-sm rounded-lg p-8 border border-gold/20 hover:border-gold/40 transition-all duration-500 hover:-translate-y-2"
+              className={`group relative backdrop-blur-sm rounded-lg p-8 border transition-all duration-500 hover:-translate-y-2 ${
+                promo.featured
+                  ? 'bg-gold/10 border-gold/40 hover:border-gold/60 lg:col-span-1 lg:row-span-1'
+                  : 'bg-coffee-light/20 border-gold/20 hover:border-gold/40'
+              }`}
               style={{ animationDelay: `${index * 0.15}s` }}
             >
               {promo.badgeKey && (
@@ -90,8 +96,8 @@ const Promotions = () => {
                 {promo.price}
               </p>
               <Button variant="gold" className="w-full" asChild>
-                <a 
-                  href={`https://wa.me/17873630620?text=${encodeURIComponent(`Hola, me interesa reservar: ${t(promo.titleKey)}`)}`}
+                <a
+                  href={`https://wa.me/17873630620?text=${encodeURIComponent(`Hi, I'm interested in: ${t(promo.titleKey)}`)}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -101,6 +107,10 @@ const Promotions = () => {
             </div>
           ))}
         </div>
+
+        <p className="text-center text-cream/50 font-body text-sm mt-8">
+          {t('promotions.extraHour')}
+        </p>
       </div>
     </section>
   );
