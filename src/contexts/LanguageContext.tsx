@@ -45,8 +45,9 @@ const translations: Record<Language, Record<string, string>> = {
     'dw.ctaButton': 'Contáctanos por WhatsApp',
     
     // Home Intro
-    'home.intro1': 'En Chaham\'s Photography & Video nos especializamos en la cobertura profesional de Bodas en Puerto Rico. Desde Río Grande hasta las playas del oeste, capturamos cada momento con pasión y creatividad. Nuestro equipo combina fotografía artística y Video cinematográfico para contar la historia de tu día especial de manera auténtica e inolvidable.',
-    'home.intro2': 'Ya sea una Boda íntima en la naturaleza de Río Grande o una celebración a gran escala frente al mar, ofrecemos paquetes completos de fotografía y Video adaptados a tu visión. Con años de experiencia documentando eventos en todo Puerto Rico, garantizamos imágenes y videos que atesorarás para siempre.',
+    'home.introTitle': 'Tu Equipo de Fotografía y Video de Bodas en Puerto Rico',
+    'home.intro1': 'En Chaham\'s Photography & Video nos especializamos en la cobertura profesional de bodas en Puerto Rico. Desde Río Grande hasta las playas del oeste, capturamos cada momento con pasión y creatividad. Nuestro equipo combina fotografía artística y video cinematográfico para contar la historia de tu día especial de manera auténtica e inolvidable.',
+    'home.intro2': 'Ya sea una boda íntima en la naturaleza de Río Grande o una celebración a gran escala frente al mar, ofrecemos paquetes completos de fotografía y video adaptados a tu visión. Con años de experiencia documentando eventos en todo Puerto Rico, garantizamos imágenes y videos que atesorarás para siempre. También disponibles para viajar a destinos en Estados Unidos, llevando la calidez de Puerto Rico a tu día especial.',
 
     // Hero
     'hero.tagline': 'Photography & Video',
@@ -154,8 +155,9 @@ const translations: Record<Language, Record<string, string>> = {
     'dw.ctaButton': 'Contact Us on WhatsApp',
     
     // Home Intro
-    'home.intro1': 'At Chaham\'s Photography & Video, we specialize in professional Wedding coverage across Puerto Rico. From Río Grande to the western beaches, we capture every moment with passion and creativity. Our team combines artistic photography and cinematic Video to tell the story of your special day in an authentic and unforgettable way.',
-    'home.intro2': 'Whether it\'s an intimate Wedding in the lush nature of Río Grande or a grand celebration by the sea, we offer complete photography and Video packages tailored to your vision. With years of experience documenting events throughout Puerto Rico, we guarantee images and videos you\'ll treasure forever.',
+    'home.introTitle': 'Your Wedding Photography & Video Team in Puerto Rico',
+    'home.intro1': 'At Chaham\'s Photography & Video, we specialize in professional wedding coverage across Puerto Rico. From Río Grande to the western beaches, we capture every moment with passion and creativity. Our team combines artistic photography and cinematic video to tell the story of your special day in an authentic and unforgettable way.',
+    'home.intro2': 'Whether it\'s an intimate wedding in the lush nature of Río Grande or a grand celebration by the sea, we offer complete photography and video packages tailored to your vision. With years of experience documenting events throughout Puerto Rico, we guarantee images and videos you\'ll treasure forever. Available for travel to destinations across the United States, bringing the warmth of Puerto Rico to your special day abroad.',
 
     // Hero
     'hero.tagline': 'Photography & Video',
