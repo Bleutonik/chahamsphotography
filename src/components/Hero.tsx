@@ -1,14 +1,10 @@
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-wedding.jpg';
 import cameraLogo from '@/assets/camera-logo.png';
-import { SectionType } from '@/pages/Index';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
-interface HeroProps {
-  onNavigate: (section: SectionType) => void;
-}
-
-const Hero = ({ onNavigate }: HeroProps) => {
+const Hero = () => {
   const { t } = useLanguage();
 
   return (
@@ -44,9 +40,11 @@ const Hero = ({ onNavigate }: HeroProps) => {
             <Button 
               variant="gold" 
               size="xl" 
-              onClick={() => onNavigate('portafolio')}
+              asChild
             >
-              {t('hero.viewPortfolio')}
+              <Link to="/portafolio">
+                {t('hero.viewPortfolio')}
+              </Link>
             </Button>
             <Button 
               variant="elegant" 

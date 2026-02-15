@@ -10,7 +10,6 @@ import NotFound from "./pages/NotFound";
 const queryClient = new QueryClient();
 
 const App = () => {
-
   return (
     <QueryClientProvider client={queryClient}>
       <LanguageProvider>
@@ -19,7 +18,13 @@ const App = () => {
           <Sonner />
           <BrowserRouter>
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<Index section="inicio" />} />
+              <Route path="/portafolio" element={<Index section="portafolio" />} />
+              <Route path="/videos" element={<Index section="videos" />} />
+              <Route path="/servicios" element={<Index section="servicios" />} />
+              <Route path="/promociones" element={<Index section="promociones" />} />
+              <Route path="/sobre-mi" element={<Index section="sobremi" />} />
+              <Route path="/destination-weddings" element={<Index section="destination-weddings" />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>

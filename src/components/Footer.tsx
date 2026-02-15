@@ -1,13 +1,10 @@
 import cameraLogo from '@/assets/camera-logo.png';
 import { Instagram, Facebook, MessageCircle } from 'lucide-react';
-import { SectionType } from '@/pages/Index';
+import { SectionType, sectionRoutes } from '@/pages/Index';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
-interface FooterProps {
-  onNavigate: (section: SectionType) => void;
-}
-
-const Footer = ({ onNavigate }: FooterProps) => {
+const Footer = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
@@ -24,13 +21,13 @@ const Footer = ({ onNavigate }: FooterProps) => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center">
           {/* Logo */}
-          <button onClick={() => onNavigate('inicio')} className="hover:opacity-80 transition-opacity">
+          <Link to="/" className="hover:opacity-80 transition-opacity">
             <img
               src={cameraLogo}
               alt="Chaham's Photography & Video"
               className="w-24 h-auto mb-4"
             />
-          </button>
+          </Link>
 
           {/* Social Links */}
           <div className="flex gap-4 mb-8">
@@ -66,13 +63,13 @@ const Footer = ({ onNavigate }: FooterProps) => {
           {/* Navigation */}
           <nav className="flex flex-wrap justify-center gap-6 mb-8">
             {navLinks.map((link) => (
-              <button
+              <Link
                 key={link.id}
-                onClick={() => onNavigate(link.id)}
+                to={sectionRoutes[link.id]}
                 className="font-body text-sm text-cream/70 hover:text-gold transition-colors"
               >
                 {t(link.labelKey)}
-              </button>
+              </Link>
             ))}
             <a 
               href="https://wa.me/17873630620" 
