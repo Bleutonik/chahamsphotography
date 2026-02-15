@@ -1,14 +1,14 @@
 import { Home, Image, Video, Briefcase, Gift, MessageCircle } from 'lucide-react';
-import { SectionType } from '@/pages/Index';
+import { SectionType, sectionRoutes } from '@/pages/Index';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 interface MobileNavProps {
   activeSection: SectionType;
-  onNavigate: (section: SectionType) => void;
 }
 
-const MobileNav = ({ activeSection, onNavigate }: MobileNavProps) => {
-  const { language, toggleLanguage, t } = useLanguage();
+const MobileNav = ({ activeSection }: MobileNavProps) => {
+  const { t } = useLanguage();
 
   const navItems: { id: SectionType; labelKey: string; icon: typeof Home }[] = [
     { id: 'inicio', labelKey: 'nav.home', icon: Home },
@@ -22,9 +22,9 @@ const MobileNav = ({ activeSection, onNavigate }: MobileNavProps) => {
     <nav className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md border-t border-border shadow-elegant safe-area-bottom">
       <div className="flex items-center justify-evenly py-1.5 px-0.5">
         {navItems.map((item) => (
-          <button
+          <Link
             key={item.id}
-            onClick={() => onNavigate(item.id)}
+            to={sectionRoutes[item.id]}
             className={`flex flex-col items-center gap-0.5 px-1 py-1.5 rounded-md transition-all duration-300 flex-1 ${
               activeSection === item.id
                 ? 'text-primary'
@@ -35,7 +35,7 @@ const MobileNav = ({ activeSection, onNavigate }: MobileNavProps) => {
             <span className={`text-[9px] font-body leading-tight ${activeSection === item.id ? 'font-semibold' : ''}`}>
               {t(item.labelKey)}
             </span>
-          </button>
+          </Link>
         ))}
         <a
           href="https://wa.me/17873630620"

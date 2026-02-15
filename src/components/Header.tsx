@@ -1,14 +1,14 @@
 import logo from '@/assets/logo.png';
-import { SectionType } from '@/pages/Index';
+import { SectionType, sectionRoutes } from '@/pages/Index';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface HeaderProps {
   activeSection: SectionType;
-  onNavigate: (section: SectionType) => void;
 }
 
-const Header = ({ activeSection, onNavigate }: HeaderProps) => {
+const Header = ({ activeSection }: HeaderProps) => {
   const { language, toggleLanguage, t } = useLanguage();
 
   const navLinks: { id: SectionType; labelKey: string }[] = [
@@ -21,27 +21,23 @@ const Header = ({ activeSection, onNavigate }: HeaderProps) => {
     { id: 'sobremi', labelKey: 'nav.about' },
   ];
 
-  const handleNavClick = (sectionId: SectionType) => {
-    onNavigate(sectionId);
-  };
-
   return (
     <header className="sticky top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-md shadow-soft py-3">
       <div className="container mx-auto px-4 flex items-center justify-between md:justify-center">
         {/* Logo - visible on mobile */}
-        <button
-          onClick={() => handleNavClick('inicio')}
+        <Link
+          to="/"
           className="md:hidden flex items-center gap-2 hover:opacity-80 transition-opacity"
         >
           <img src={logo} alt="Chaham's Photography" className="h-10 w-auto" />
-        </button>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-2">
           {navLinks.map((link) => (
-            <button
+            <Link
               key={link.id}
-              onClick={() => handleNavClick(link.id)}
+              to={sectionRoutes[link.id]}
               className={`font-body text-sm tracking-wide px-4 py-2 rounded-md transition-all duration-300 ${
                 activeSection === link.id
                   ? 'bg-primary text-primary-foreground'
@@ -49,7 +45,7 @@ const Header = ({ activeSection, onNavigate }: HeaderProps) => {
               }`}
             >
               {t(link.labelKey)}
-            </button>
+            </Link>
           ))}
           <a
             href="https://wa.me/17873630620"
