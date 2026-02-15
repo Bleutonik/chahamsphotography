@@ -1,9 +1,10 @@
 import { Button } from '@/components/ui/button';
 import { Diamond, Camera, Film, Video, Clapperboard } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Promotions = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const promotions = [
     {
@@ -58,12 +59,14 @@ const Promotions = () => {
           <p className="font-body text-gold-light text-sm tracking-widest uppercase mb-3">
             {t('promotions.subtitle')}
           </p>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-4">
-            {t('promotions.title')}
-          </h2>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-4">
+            {language === 'es' ? 'Paquetes de Fotografía y Video de Bodas 2026' : '2026 Wedding Photography & Video Packages'}
+          </h1>
           <div className="w-24 h-px bg-gold mx-auto my-8" />
           <p className="font-body text-cream/80 max-w-2xl mx-auto text-lg">
-            {t('promotions.description')}
+            {language === 'es'
+              ? 'Paquetes exclusivos de fotografía y video para bodas en Puerto Rico. Precios competitivos con la más alta calidad profesional. Todo es personalizable y adaptable a tu visión.'
+              : 'Exclusive photography and video packages for weddings in Puerto Rico. Competitive pricing with the highest professional quality. Everything is customizable and adaptable to your vision.'}
           </p>
         </div>
 
@@ -86,9 +89,9 @@ const Promotions = () => {
               <div className="w-14 h-14 rounded-full bg-gold/20 flex items-center justify-center mb-6">
                 <promo.icon className="w-7 h-7 text-gold" />
               </div>
-              <h3 className="font-display text-lg font-semibold text-cream mb-3">
+              <h2 className="font-display text-lg font-semibold text-cream mb-3">
                 {t(promo.titleKey)}
-              </h3>
+              </h2>
               <p className="font-body text-cream/70 text-sm leading-relaxed mb-6">
                 {t(promo.descriptionKey)}
               </p>
@@ -111,6 +114,30 @@ const Promotions = () => {
         <p className="text-center text-cream/50 font-body text-sm mt-8">
           {t('promotions.extraHour')}
         </p>
+
+        {/* Internal Links */}
+        <div className="text-center mt-12 space-y-4">
+          <h2 className="font-display text-2xl font-bold text-cream">
+            {language === 'es' ? '¿Quieres ver nuestro trabajo?' : 'Want to see our work?'}
+          </h2>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button variant="outline" size="sm" className="border-gold/40 text-cream hover:bg-gold/20" asChild>
+              <Link to="/portafolio">
+                {language === 'es' ? 'Ver Portafolio' : 'View Portfolio'}
+              </Link>
+            </Button>
+            <Button variant="outline" size="sm" className="border-gold/40 text-cream hover:bg-gold/20" asChild>
+              <Link to="/videos">
+                {language === 'es' ? 'Ver Videos' : 'View Videos'}
+              </Link>
+            </Button>
+            <Button variant="outline" size="sm" className="border-gold/40 text-cream hover:bg-gold/20" asChild>
+              <Link to="/servicios">
+                {language === 'es' ? 'Todos los Servicios' : 'All Services'}
+              </Link>
+            </Button>
+          </div>
+        </div>
       </div>
     </section>
   );
