@@ -1,10 +1,11 @@
 import { Button } from '@/components/ui/button';
 import { MapPin, Camera, Heart, Star, Plane } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 import heroImage from '@/assets/hero-wedding.jpg';
 
 const DestinationWeddings = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const features = [
     { icon: Plane, titleKey: 'dw.feature1Title', descKey: 'dw.feature1Desc' },
@@ -25,7 +26,8 @@ const DestinationWeddings = () => {
         <div className="relative rounded-2xl overflow-hidden mb-16">
           <img
             src={heroImage}
-            alt="Destination Wedding in Puerto Rico"
+            alt="Destination wedding photography on the beach in Puerto Rico — romantic sunset ceremony"
+            loading="lazy"
             className="w-full h-[400px] object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-coffee/80 via-coffee/40 to-transparent" />
@@ -34,7 +36,7 @@ const DestinationWeddings = () => {
               {t('dw.subtitle')}
             </p>
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-cream mb-4">
-              {t('dw.title')}
+              {language === 'es' ? 'Fotógrafo de Bodas Destino en Puerto Rico' : 'Destination Wedding Photographer in Puerto Rico'}
             </h1>
             <p className="font-body text-cream/90 text-lg max-w-2xl">
               {t('dw.heroDesc')}
@@ -50,9 +52,9 @@ const DestinationWeddings = () => {
               className="bg-card rounded-xl p-8 shadow-soft hover:shadow-elegant transition-shadow duration-300"
             >
               <feature.icon className="w-10 h-10 text-primary mb-4" />
-              <h3 className="font-display text-xl font-semibold text-foreground mb-3">
+              <h2 className="font-display text-xl font-semibold text-foreground mb-3">
                 {t(feature.titleKey)}
-              </h3>
+              </h2>
               <p className="font-body text-muted-foreground leading-relaxed">
                 {t(feature.descKey)}
               </p>
@@ -101,7 +103,7 @@ const DestinationWeddings = () => {
           </div>
         </div>
 
-        {/* CTA */}
+        {/* CTA + Internal Links */}
         <div className="text-center">
           <h2 className="font-display text-3xl font-bold text-foreground mb-4">
             {t('dw.ctaTitle')}
@@ -109,11 +111,23 @@ const DestinationWeddings = () => {
           <p className="font-body text-muted-foreground mb-8 max-w-xl mx-auto">
             {t('dw.ctaDesc')}
           </p>
-          <Button variant="gold" size="xl" asChild>
-            <a href="https://wa.me/17873630620" target="_blank" rel="noopener noreferrer">
-              {t('dw.ctaButton')}
-            </a>
-          </Button>
+          <div className="flex flex-wrap justify-center gap-3">
+            <Button variant="gold" size="xl" asChild>
+              <a href="https://wa.me/17873630620" target="_blank" rel="noopener noreferrer">
+                {t('dw.ctaButton')}
+              </a>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/portafolio">
+                {language === 'es' ? 'Ver Portafolio' : 'View Portfolio'}
+              </Link>
+            </Button>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/promociones">
+                {language === 'es' ? 'Ver Paquetes' : 'View Packages'}
+              </Link>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

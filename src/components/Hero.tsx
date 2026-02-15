@@ -13,7 +13,8 @@ const Hero = () => {
       <div className="absolute inset-0">
         <img
           src={heroImage}
-          alt="Fotografía de boda en Puerto Rico"
+          alt="Wedding photography in Puerto Rico — bride and groom at sunset beach ceremony"
+          loading="eager"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-coffee/60 via-coffee/40 to-coffee/70" />

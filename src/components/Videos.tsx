@@ -1,8 +1,10 @@
 import { Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { Link } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 const Videos = () => {
-  const { t, language } = useLanguage();
+  const { language } = useLanguage();
 
   return (
     <section className="min-h-[calc(100vh-64px)] py-12 md:py-16 bg-background flex flex-col justify-center">
@@ -10,16 +12,16 @@ const Videos = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <p className="font-body text-primary text-sm tracking-widest uppercase mb-3">
-            {t('videos.subtitle')}
+            {language === 'es' ? 'Producción Audiovisual' : 'Audiovisual Production'}
           </p>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-            {t('videos.title')}
-          </h2>
+          <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
+            {language === 'es' ? 'Videografía Cinematográfica de Bodas' : 'Cinematic Wedding Videography'}
+          </h1>
           <div className="section-divider" />
           <p className="font-body text-muted-foreground max-w-2xl mx-auto text-lg">
-            {language === 'es' 
-              ? 'Creamos videos cinematográficos que capturan la esencia de cada momento especial.'
-              : 'We create cinematic videos that capture the essence of every special moment.'}
+            {language === 'es'
+              ? 'Creamos videos cinematográficos de bodas en Puerto Rico que capturan la emoción, la alegría y cada detalle de tu día especial. Desde teasers hasta películas completas de boda.'
+              : 'We create cinematic wedding videos in Puerto Rico that capture the emotion, joy, and every detail of your special day. From teasers to full-length wedding films.'}
           </p>
         </div>
 
@@ -29,14 +31,15 @@ const Videos = () => {
             <div className="aspect-video">
               <iframe
                 src="https://www.youtube.com/embed/Q9-kybS3Mvo"
-                title="Chaham's Photography & Video - Video Promocional"
+                title="Chaham Photography Wedding Videography Showreel Puerto Rico"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
+                loading="lazy"
                 className="w-full h-full"
               />
             </div>
           </div>
-          
+
           {/* Video Caption */}
           <div className="text-center mt-6">
             <div className="inline-flex items-center gap-2 text-primary">
@@ -45,6 +48,39 @@ const Videos = () => {
                 {language === 'es' ? 'Video Promocional' : 'Promotional Video'}
               </span>
             </div>
+          </div>
+        </div>
+
+        {/* SEO Content */}
+        <div className="max-w-3xl mx-auto mt-16 space-y-6 text-center">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground">
+            {language === 'es' ? 'Video Profesional de Bodas en Puerto Rico' : 'Professional Wedding Video in Puerto Rico'}
+          </h2>
+          <p className="font-body text-muted-foreground leading-relaxed">
+            {language === 'es'
+              ? 'Nuestro equipo de videografía utiliza equipos de última generación para crear videos cinematográficos que cuentan tu historia de amor. Ofrecemos teasers de 1-2 minutos, recaps de eventos y películas completas de boda. Con experiencia filmando en las locaciones más hermosas de Puerto Rico — desde las playas de Cabo Rojo hasta los históricos salones de Old San Juan — garantizamos contenido audiovisual de la más alta calidad.'
+              : 'Our videography team uses state-of-the-art equipment to create cinematic videos that tell your love story. We offer 1-2 minute teasers, event recaps, and full wedding films. With experience filming at the most beautiful locations in Puerto Rico — from the beaches of Cabo Rojo to the historic venues of Old San Juan — we guarantee the highest quality audiovisual content.'}
+          </p>
+          <h3 className="font-display text-xl font-semibold text-foreground">
+            {language === 'es' ? 'Nuestros Servicios de Video Incluyen' : 'Our Video Services Include'}
+          </h3>
+          <ul className="font-body text-muted-foreground text-sm space-y-2">
+            <li>{language === 'es' ? '• Teasers cinematográficos de 1-2 minutos' : '• Cinematic 1-2 minute teasers'}</li>
+            <li>{language === 'es' ? '• Love Story videos previos a la boda' : '• Pre-wedding Love Story videos'}</li>
+            <li>{language === 'es' ? '• Cobertura completa del evento en video' : '• Full event video coverage'}</li>
+            <li>{language === 'es' ? '• Recap highlights de la celebración' : '• Celebration highlight recaps'}</li>
+          </ul>
+          <div className="flex flex-wrap justify-center gap-3 pt-4">
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/promociones">
+                {language === 'es' ? 'Ver Paquetes de Video' : 'View Video Packages'}
+              </Link>
+            </Button>
+            <Button variant="outline" size="sm" asChild>
+              <Link to="/portafolio">
+                {language === 'es' ? 'Ver Portafolio' : 'View Portfolio'}
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

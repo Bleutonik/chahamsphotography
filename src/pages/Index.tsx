@@ -2,6 +2,7 @@ import Header from '@/components/Header';
 import MobileNav from '@/components/MobileNav';
 import Hero from '@/components/Hero';
 import HomeIntro from '@/components/HomeIntro';
+import Testimonials from '@/components/Testimonials';
 import Portfolio from '@/components/Portfolio';
 import Videos from '@/components/Videos';
 import Services from '@/components/Services';
@@ -9,7 +10,7 @@ import Promotions from '@/components/Promotions';
 import AboutMe from '@/components/AboutMe';
 import DestinationWeddings from '@/components/DestinationWeddings';
 import Footer from '@/components/Footer';
-import { useLocation } from 'react-router-dom';
+import SEOHead from '@/components/SEOHead';
 
 export type SectionType = 'inicio' | 'portafolio' | 'videos' | 'servicios' | 'promociones' | 'sobremi' | 'destination-weddings';
 
@@ -39,6 +40,7 @@ const Index = ({ section }: IndexProps) => {
           <>
             <Hero />
             <HomeIntro />
+            <Testimonials />
           </>
         );
       case 'portafolio':
@@ -58,6 +60,7 @@ const Index = ({ section }: IndexProps) => {
           <>
             <Hero />
             <HomeIntro />
+            <Testimonials />
           </>
         );
     }
@@ -65,6 +68,7 @@ const Index = ({ section }: IndexProps) => {
 
   return (
     <div className="min-h-screen flex flex-col pb-16 md:pb-0">
+      <SEOHead section={section} />
       <Header activeSection={section} />
       <main className="flex-1">
         {renderSection()}
