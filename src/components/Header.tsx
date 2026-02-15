@@ -17,6 +17,7 @@ const Header = ({ activeSection, onNavigate }: HeaderProps) => {
     { id: 'videos', labelKey: 'nav.videos' },
     { id: 'servicios', labelKey: 'nav.services' },
     { id: 'promociones', labelKey: 'nav.promotions' },
+    { id: 'destination-weddings', labelKey: 'nav.destinationWeddings' },
     { id: 'sobremi', labelKey: 'nav.about' },
   ];
 

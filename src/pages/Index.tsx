@@ -7,9 +7,10 @@ import Videos from '@/components/Videos';
 import Services from '@/components/Services';
 import Promotions from '@/components/Promotions';
 import AboutMe from '@/components/AboutMe';
+import DestinationWeddings from '@/components/DestinationWeddings';
 import Footer from '@/components/Footer';
 
-export type SectionType = 'inicio' | 'portafolio' | 'videos' | 'servicios' | 'promociones' | 'sobremi';
+export type SectionType = 'inicio' | 'portafolio' | 'videos' | 'servicios' | 'promociones' | 'sobremi' | 'destination-weddings';
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState<SectionType>('inicio');
@@ -28,6 +29,8 @@ const Index = () => {
         return <Promotions />;
       case 'sobremi':
         return <AboutMe />;
+      case 'destination-weddings':
+        return <DestinationWeddings />;
       default:
         return <Hero onNavigate={setActiveSection} />;
     }
