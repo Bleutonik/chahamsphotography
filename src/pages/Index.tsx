@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Header from '@/components/Header';
 import MobileNav from '@/components/MobileNav';
 import Hero from '@/components/Hero';
+import HomeIntro from '@/components/HomeIntro';
 import Portfolio from '@/components/Portfolio';
 import Videos from '@/components/Videos';
 import Services from '@/components/Services';
@@ -18,7 +19,12 @@ const Index = () => {
   const renderSection = () => {
     switch (activeSection) {
       case 'inicio':
-        return <Hero onNavigate={setActiveSection} />;
+        return (
+          <>
+            <Hero onNavigate={setActiveSection} />
+            <HomeIntro />
+          </>
+        );
       case 'portafolio':
         return <Portfolio />;
       case 'videos':

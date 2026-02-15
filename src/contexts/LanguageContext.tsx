@@ -44,6 +44,10 @@ const translations: Record<Language, Record<string, string>> = {
     'dw.ctaDesc': 'Hablemos sobre cómo capturar cada momento mágico de tu destination wedding.',
     'dw.ctaButton': 'Contáctanos por WhatsApp',
     
+    // Home Intro
+    'home.intro1': 'En Chaham\'s Photography & Video nos especializamos en la cobertura profesional de Bodas en Puerto Rico. Desde Río Grande hasta las playas del oeste, capturamos cada momento con pasión y creatividad. Nuestro equipo combina fotografía artística y Video cinematográfico para contar la historia de tu día especial de manera auténtica e inolvidable.',
+    'home.intro2': 'Ya sea una Boda íntima en la naturaleza de Río Grande o una celebración a gran escala frente al mar, ofrecemos paquetes completos de fotografía y Video adaptados a tu visión. Con años de experiencia documentando eventos en todo Puerto Rico, garantizamos imágenes y videos que atesorarás para siempre.',
+
     // Hero
     'hero.tagline': 'Photography & Video',
     'hero.description': 'Capturando momentos únicos e irrepetibles en Puerto Rico y Estados Unidos',
@@ -149,6 +153,10 @@ const translations: Record<Language, Record<string, string>> = {
     'dw.ctaDesc': 'Let\'s talk about capturing every magical moment of your destination wedding.',
     'dw.ctaButton': 'Contact Us on WhatsApp',
     
+    // Home Intro
+    'home.intro1': 'At Chaham\'s Photography & Video, we specialize in professional Wedding coverage across Puerto Rico. From Río Grande to the western beaches, we capture every moment with passion and creativity. Our team combines artistic photography and cinematic Video to tell the story of your special day in an authentic and unforgettable way.',
+    'home.intro2': 'Whether it\'s an intimate Wedding in the lush nature of Río Grande or a grand celebration by the sea, we offer complete photography and Video packages tailored to your vision. With years of experience documenting events throughout Puerto Rico, we guarantee images and videos you\'ll treasure forever.',
+
     // Hero
     'hero.tagline': 'Photography & Video',
     'hero.description': 'Capturing unique and unrepeatable moments in Puerto Rico and the United States',
