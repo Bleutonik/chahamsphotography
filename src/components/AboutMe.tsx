@@ -31,6 +31,9 @@ const AboutMe = () => {
                   src={aboutImage}
                   alt="Luis Alvarado — Professional Wedding Photographer in Puerto Rico with over 10 years of experience"
                   loading="lazy"
+                  decoding="async"
+                  width={320}
+                  height={400}
                   className="w-72 md:w-80 h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-coffee/10 via-transparent to-transparent pointer-events-none"></div>

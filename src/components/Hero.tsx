@@ -15,6 +15,9 @@ const Hero = () => {
           src={heroImage}
           alt="Wedding photography in Puerto Rico — bride and groom at sunset beach ceremony"
           loading="eager"
+          fetchPriority="high"
+          width={1920}
+          height={1080}
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-coffee/60 via-coffee/40 to-coffee/70" />
@@ -26,6 +29,8 @@ const Hero = () => {
           <img 
             src={cameraLogo} 
             alt="Chaham's Photography Logo" 
+            width={256}
+            height={256}
             className="w-40 md:w-56 lg:w-64 h-auto mx-auto mb-0"
           />
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-cream mb-6 leading-tight -mt-6">

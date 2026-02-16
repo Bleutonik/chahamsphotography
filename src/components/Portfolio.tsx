@@ -92,6 +92,9 @@ const Portfolio = () => {
                         src={item.image}
                         alt={item.alt}
                         loading="lazy"
+                        decoding="async"
+                        width={800}
+                        height={600}
                         className="w-full h-full transition-transform duration-500 group-hover:scale-105 object-contain"
                       />
                       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
