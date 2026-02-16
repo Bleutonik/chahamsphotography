@@ -29,7 +29,7 @@ const Header = ({ activeSection }: HeaderProps) => {
           to="/"
           className="md:hidden flex items-center gap-2 hover:opacity-80 transition-opacity"
         >
-          <img src={logo} alt="Chaham's Photography" className="h-10 w-auto" />
+          <img src={logo} alt="Chaham's Photography" width={120} height={40} className="h-10 w-auto" />
         </Link>
 
         {/* Desktop Navigation */}

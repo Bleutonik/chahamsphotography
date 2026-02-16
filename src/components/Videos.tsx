@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Play } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Link } from 'react-router-dom';
@@ -5,6 +6,7 @@ import { Button } from '@/components/ui/button';
 
 const Videos = () => {
   const { language } = useLanguage();
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   return (
     <section className="min-h-[calc(100vh-64px)] py-12 md:py-16 bg-background flex flex-col justify-center">
@@ -29,14 +31,36 @@ const Videos = () => {
         <div className="max-w-4xl mx-auto">
           <div className="relative rounded-lg overflow-hidden shadow-elegant bg-card">
             <div className="aspect-video">
-              <iframe
-                src="https://www.youtube.com/embed/Q9-kybS3Mvo"
-                title="Chaham Photography Wedding Videography Showreel Puerto Rico"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                loading="lazy"
-                className="w-full h-full"
-              />
+              {videoLoaded ? (
+                <iframe
+                  src="https://www.youtube.com/embed/Q9-kybS3Mvo?autoplay=1"
+                  title="Chaham Photography Wedding Videography Showreel Puerto Rico"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="w-full h-full"
+                />
+              ) : (
+                <button
+                  onClick={() => setVideoLoaded(true)}
+                  className="relative w-full h-full group cursor-pointer bg-coffee"
+                  aria-label="Play wedding videography showreel"
+                >
+                  <img
+                    src={`https://img.youtube.com/vi/Q9-kybS3Mvo/hqdefault.jpg`}
+                    alt="Wedding videography showreel thumbnail — Chaham Photography Puerto Rico"
+                    loading="lazy"
+                    decoding="async"
+                    width={480}
+                    height={360}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/40 transition-colors">
+                    <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-primary/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Play className="w-8 h-8 md:w-10 md:h-10 text-primary-foreground ml-1" />
+                    </div>
+                  </div>
+                </button>
+              )}
             </div>
           </div>
 

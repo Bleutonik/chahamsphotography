@@ -28,6 +28,9 @@ const DestinationWeddings = () => {
             src={heroImage}
             alt="Destination wedding photography on the beach in Puerto Rico — romantic sunset ceremony"
             loading="lazy"
+            decoding="async"
+            width={1200}
+            height={400}
             className="w-full h-[400px] object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-coffee/80 via-coffee/40 to-transparent" />

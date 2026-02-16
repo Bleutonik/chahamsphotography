@@ -27,6 +27,10 @@ const Footer = () => {
             <img
               src={cameraLogo}
               alt="Chaham's Photography & Video"
+              loading="lazy"
+              decoding="async"
+              width={96}
+              height={96}
               className="w-24 h-auto mb-4"
             />
           </Link>
