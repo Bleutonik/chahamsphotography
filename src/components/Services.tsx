@@ -43,7 +43,7 @@ const Services = () => {
             {t('services.subtitle')}
           </p>
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4">
-            {language === 'es' ? 'Servicios de Fotografía y Video en Puerto Rico' : 'Photography & Video Services in Puerto Rico'}
+            {language === 'es' ? 'Servicios de Fotografía y Video en Puerto Rico y USA' : 'Photography & Video Services in Puerto Rico & USA'}
           </h1>
           <div className="section-divider" />
           <p className="font-body text-muted-foreground max-w-2xl mx-auto text-lg">
