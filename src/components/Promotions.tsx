@@ -249,17 +249,17 @@ const Promotions = () => {
             {language === 'es' ? '¿Quieres ver nuestro trabajo?' : 'Want to see our work?'}
           </h2>
           <div className="flex flex-wrap justify-center gap-3">
-            <Button variant="outline" size="sm" className="border-gold/40 text-cream hover:bg-gold/20" asChild>
+            <Button variant="outline" size="sm" className="bg-transparent border-gold/40 text-cream hover:bg-gold/20 hover:text-cream" asChild>
               <Link to="/portafolio">
                 {language === 'es' ? 'Ver Portafolio' : 'View Portfolio'}
               </Link>
             </Button>
-            <Button variant="outline" size="sm" className="border-gold/40 text-cream hover:bg-gold/20" asChild>
+            <Button variant="outline" size="sm" className="bg-transparent border-gold/40 text-cream hover:bg-gold/20 hover:text-cream" asChild>
               <Link to="/videos">
                 {language === 'es' ? 'Ver Videos' : 'View Videos'}
               </Link>
             </Button>
-            <Button variant="outline" size="sm" className="border-gold/40 text-cream hover:bg-gold/20" asChild>
+            <Button variant="outline" size="sm" className="bg-transparent border-gold/40 text-cream hover:bg-gold/20 hover:text-cream" asChild>
               <Link to="/servicios">
                 {language === 'es' ? 'Todos los Servicios' : 'All Services'}
               </Link>
