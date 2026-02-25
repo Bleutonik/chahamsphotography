@@ -225,9 +225,23 @@ const Promotions = () => {
           ))}
         </div>
 
-        <p className="text-center text-cream/50 font-body text-sm mt-8">
-          {t('promotions.extraHour')}
-        </p>
+        <div className="max-w-2xl mx-auto mt-8 space-y-2 text-center">
+          <p className="text-cream/50 font-body text-sm">
+            {t('promotions.extraHour')}
+          </p>
+          <p className="text-gold-light/80 font-body text-sm">
+            {language === 'es'
+              ? '* Los precios mostrados son referenciales y pueden ser negociados según tus necesidades.'
+              : '* Prices shown are reference prices and can be negotiated based on your needs.'}
+          </p>
+          {region === 'US' && (
+            <p className="text-gold-light/80 font-body text-sm">
+              {language === 'es'
+                ? '* Para servicios en Estados Unidos, los precios pueden variar dependiendo de la ubicación y los gastos de viaje.'
+                : '* For services in the United States, prices may vary depending on the location and travel expenses.'}
+            </p>
+          )}
+        </div>
 
         {/* Internal Links */}
         <div className="text-center mt-12 space-y-4">
