@@ -160,6 +160,9 @@ const Promotions = () => {
           </p>
 
           {/* Region Toggle */}
+          <p className="font-body text-cream/70 text-sm mb-3">
+            {language === 'es' ? '¿Dónde se van a casar?' : 'Where are you getting married?'}
+          </p>
           <div className="inline-flex items-center gap-2 bg-coffee-light/30 border border-gold/20 rounded-full p-1.5">
             <button
               onClick={() => setRegion('US')}
