@@ -55,15 +55,15 @@ const seoData: Record<SectionType, Record<'en' | 'es', SEOConfig>> = {
   },
   servicios: {
     en: {
-      title: 'Photography & Video Services | Chaham Photography PR',
-      description: 'Professional photography & videography services: weddings, quinceañeras, portraits, corporate events & families. Serving Puerto Rico & the United States.',
-      keywords: 'photography services puerto rico, videography services, wedding services, quinceañera photographer, event photographer',
+      title: 'Photography & Video Services PR & USA | Chaham',
+      description: 'Professional photography & videography services in Puerto Rico and the USA: weddings, quinceañeras, portraits, corporate events & families. Book now!',
+      keywords: 'photography services puerto rico, photography services USA, videography services, wedding services, quinceañera photographer, event photographer USA',
       canonical: 'https://chahamsphotography.lovable.app/servicios',
     },
     es: {
-      title: 'Servicios Fotografía y Video | Chaham Photography PR',
-      description: 'Servicios profesionales de fotografía y video: bodas, quinceañeras, retratos, eventos corporativos y familias. Puerto Rico y Estados Unidos.',
-      keywords: 'servicios fotografía puerto rico, servicios videografía, servicios boda, fotógrafo quinceañera, fotógrafo eventos',
+      title: 'Servicios Fotografía y Video PR y USA | Chaham',
+      description: 'Servicios profesionales de fotografía y video en Puerto Rico y USA: bodas, quinceañeras, retratos, eventos corporativos y familias. ¡Reserva ahora!',
+      keywords: 'servicios fotografía puerto rico, servicios fotografía USA, servicios videografía, servicios boda, fotógrafo quinceañera, fotógrafo eventos USA',
       canonical: 'https://chahamsphotography.lovable.app/servicios',
     },
   },
